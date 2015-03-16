@@ -23,6 +23,12 @@ angular.module('seedApp')
       controller: 'HomeController'
     });
 
+    $stateProvider.state('home.Henrry', {
+      url: 'Henrry',
+      templateUrl: path + '/Henrry.html',
+      controller: 'HomeController'
+    });
+
     $urlRouterProvider.otherwise('/');
   }
 ]);
