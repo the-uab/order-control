@@ -22,6 +22,11 @@ angular.module('seedApp')
       templateUrl: path + '/contact.html',
       controller: 'HomeController'
     });
+    $stateProvider.state('home.elias', {
+      url: 'elias',
+      templateUrl: path + '/elias.html',
+      controller: 'HomeController'
+    });
 
     $urlRouterProvider.otherwise('/');
   }
