@@ -17,6 +17,13 @@ angular.module('seedApp')
       controller: 'HomeController'
     });
 
+    $stateProvider.state('home.contact', {
+      url: 'contact',
+      templateUrl: path + '/contact.html',
+      controller: 'HomeController'
+    });
+
+
     $stateProvider.state('home.mariouab', {
       url: 'mariouab',
       templateUrl: path + '/mariouab.html',
