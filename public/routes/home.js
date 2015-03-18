@@ -23,6 +23,11 @@ angular.module('seedApp')
       controller: 'HomeController'
     });
 
+ $stateProvider.state('home.gere', {
+      url: 'gere',
+      templateUrl: path + '/gere.html',
+      controller: 'HomeController'
+    });
     $urlRouterProvider.otherwise('/');
   }
 ]);
