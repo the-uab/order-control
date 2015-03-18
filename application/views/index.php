@@ -16,9 +16,11 @@
 
 		<script src="./public/app.js"></script>
 		<script src="./public/routes/home.js"></script>
+		<script src="./public/routes/contact.js"></script>
 
 		<script src="./public/controllers/main.js"></script>
 		<script src="./public/controllers/home.js"></script>
+		<script src="./public/controllers/contact.js"></script>
 	</head>
 
 	<body>
