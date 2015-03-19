@@ -18,7 +18,7 @@ angular.module('seedApp')
     });
 
     $stateProvider.state('home.contact', {
-      url: 'about',
+      url: 'contact',
       templateUrl: path + '/contact.html',
       controller: 'HomeController'
     });
@@ -28,9 +28,16 @@ angular.module('seedApp')
       templateUrl: path + '/detallePedido.html',
       controller: 'HomeController'
     });
+
     $stateProvider.state('home.editarPedido', {
       url: 'editarPedido',
       templateUrl: path + '/editarPedido.html',
+      controller: 'HomeController'
+    });
+
+    $stateProvider.state('home.mariouab', {
+      url: 'mariouab',
+      templateUrl: path + '/mariouab.html',
       controller: 'HomeController'
     });
 
