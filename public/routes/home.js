@@ -35,6 +35,15 @@ angular.module('seedApp')
       controller: 'HomeController'
     });
 
+
+    $stateProvider.state('home.ronald', {
+      url: 'ronald',
+      templateUrl: path + '/ronald.html',
+      controller: 'HomeController'
+    });
+
+
+
     $urlRouterProvider.otherwise('/');
   }
 ]);
