@@ -22,6 +22,7 @@ angular.module('seedApp')
       templateUrl: path + '/contact.html',
       controller: 'HomeController'
     });
+
     $stateProvider.state('home.Vivian', {
       url: 'Vivian',
       templateUrl: path + '/Vivian.html',
@@ -43,6 +44,12 @@ angular.module('seedApp')
     $stateProvider.state('home.mariouab', {
       url: 'mariouab',
       templateUrl: path + '/mariouab.html',
+      controller: 'HomeController'
+    });
+
+    $stateProvider.state('home.elias', {
+      url: 'elias',
+      templateUrl: path + '/elias.html',
       controller: 'HomeController'
     });
 
