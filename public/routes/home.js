@@ -22,6 +22,11 @@ angular.module('seedApp')
       templateUrl: path + '/contact.html',
       controller: 'HomeController'
     });
+    $stateProvider.state('home.Vivian', {
+      url: 'Vivian',
+      templateUrl: path + '/Vivian.html',
+      controller: 'HomeController'
+    });
 
     $stateProvider.state('home.detallePedido', {
       url: 'detallePedido',
