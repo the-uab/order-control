@@ -1,9 +1,7 @@
 'use strict';
-
 angular.module('seedApp')
 .config(['$urlRouterProvider', '$stateProvider',
   function($urlRouterProvider, $stateProvider) {
-
     var path = './public/views';
     $stateProvider.state('home', {
       url: '/',
@@ -50,6 +48,18 @@ angular.module('seedApp')
     $stateProvider.state('home.elias', {
       url: 'elias',
       templateUrl: path + '/elias.html',
+      controller: 'HomeController'
+    });
+    
+    $stateProvider.state('home.finanzas2', {
+      url: 'finanzas2',
+      templateUrl: path + '/finanzas2.html',
+      controller: 'HomeController'
+    });
+
+    $stateProvider.state('home.ronald', {
+      url: 'ronald',
+      templateUrl: path + '/ronald.html',
       controller: 'HomeController'
     });
 
