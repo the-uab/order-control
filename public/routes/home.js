@@ -23,9 +23,14 @@ angular.module('seedApp')
       controller: 'HomeController'
     });
 
-    $stateProvider.state('home.Henrry', {
-      url: 'Henrry',
-      templateUrl: path + '/Henrry.html',
+    $stateProvider.state('home.detallePedido', {
+      url: 'detallePedido',
+      templateUrl: path + '/detallePedido.html',
+      controller: 'HomeController'
+    });
+    $stateProvider.state('home.editarPedido', {
+      url: 'editarPedido',
+      templateUrl: path + '/editarPedido.html',
       controller: 'HomeController'
     });
 

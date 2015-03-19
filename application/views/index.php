@@ -10,6 +10,7 @@
 		<script src="./public/bower_components/angular-resource/angular-resource.js"></script>
 		<script src="./public/bower_components/angular-route/angular-route.js"></script>
 		<script src="./public/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+		<script src="./public/bower_components/jquery/dist/jquery.js"></script>
 
 		<link rel="stylesheet" href="./public/assets/css/style.css">
 		<link rel="stylesheet" href="./public/bower_components/bootstrap/dist/css/bootstrap.css">
