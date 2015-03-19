@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width">
 		<title>Order control</title>
 
 		<script src="./public/bower_components/angular/angular.js"></script>
+		<script src="./public/bower_components/jquery/dist/holder.js"></script>
 		<script src="./public/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 		<script src="./public/bower_components/angular-resource/angular-resource.js"></script>
 		<script src="./public/bower_components/angular-route/angular-route.js"></script>

@@ -5,6 +5,7 @@ angular.module('seedApp')
   function($urlRouterProvider, $stateProvider) {
 
     var path = './public/views';
+    
     $stateProvider.state('home', {
       url: '/',
       templateUrl: path + '/index.html',
@@ -22,7 +23,19 @@ angular.module('seedApp')
       templateUrl: path + '/contact.html',
       controller: 'HomeController'
     });
+    $stateProvider.state('home.ronald', {
+      url: 'ronald',
+      templateUrl: path + '/ronald.html',
+      controller: 'HomeController'
+    });
+
+    $stateProvider.state('home.finanzas2', {
+      url: 'finanzas2',
+      templateUrl: path + '/finanzas2.html',
+      controller: 'HomeController'
+    });
 
     $urlRouterProvider.otherwise('/');
   }
 ]);
+ 
