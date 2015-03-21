@@ -8,5 +8,10 @@ angular.module('seedApp')
       $scope.persons = response;
     });
 
+    $scope.item = {};
+
+    $scope.savePerson = function(item) {
+      console.log(item);
+    }
   }
 ]);
