@@ -20,6 +20,9 @@
 		<script src="./public/routes/home.js"></script>
 		<script src="./public/routes/contact.js"></script>
 
+		<script src="./public/services/persons.js"></script>
+
+		<script src="./public/controllers/person.js"></script>
 		<script src="./public/controllers/main.js"></script>
 		<script src="./public/controllers/home.js"></script>
 		<script src="./public/controllers/contact.js"></script>
