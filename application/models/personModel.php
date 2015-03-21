@@ -24,7 +24,7 @@ class PersonModel extends CI_Model {
   // add new person
   function save($person){
     $this->db->insert($this->tbl_person, $person);
-    return $this->db->insert_id();
+    return (array)$this->get_by_id($this->db->insert_id())->row();
   }
   // update person by id
   function update($id, $person){
