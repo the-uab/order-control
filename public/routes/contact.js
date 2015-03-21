@@ -20,63 +20,69 @@ angular.module('seedApp')
 
 
     $stateProvider.state('home.contact.aguti666', {
-      url: 'aguti666',
+      url: '/aguti666',
       templateUrl: path + '/aguti666.html',
       controller: 'HomeController'
     });
 
     $stateProvider.state('home.contact.pedidos1', {
-      url: 'pedidos1',
+      url: '/pedidos1',
       templateUrl: path + '/pedidos1.html',
       controller: 'HomeController'
     });
 
     $stateProvider.state('home.contact.pedidos2', {
-      url: 'pedidos2',
+      url: '/pedidos2',
       templateUrl: path + '/pedidos2.html',
       controller: 'HomeController'
     });
 
     $stateProvider.state('home.contact.Vivian', {
-      url: 'Vivian',
+      url: '/Vivian',
       templateUrl: path + '/Vivian.html',
       controller: 'HomeController'
     });
 
     $stateProvider.state('home.contact.detallePedido', {
-      url: 'detallePedido',
+      url: '/detallePedido',
       templateUrl: path + '/detallePedido.html',
       controller: 'HomeController'
     });
 
     $stateProvider.state('home.contact.editarPedido', {
-      url: 'editarPedido',
+      url: '/editarPedido',
       templateUrl: path + '/editarPedido.html',
       controller: 'HomeController'
     });
 
     $stateProvider.state('home.contact.mariouab', {
-      url: 'mariouab',
+      url: '/mariouab',
       templateUrl: path + '/mariouab.html',
       controller: 'HomeController'
     });
 
     $stateProvider.state('home.contact.elias', {
-      url: 'elias',
+      url: '/elias',
       templateUrl: path + '/elias.html',
       controller: 'HomeController'
     });
-    
+
     $stateProvider.state('home.contact.finanzas2', {
-      url: 'finanzas2',
+      url: '/finanzas2',
       templateUrl: path + '/finanzas2.html',
       controller: 'HomeController'
     });
 
     $stateProvider.state('home.contact.ronald', {
-      url: 'ronald',
+      url: '/ronald',
       templateUrl: path + '/ronald.html',
       controller: 'HomeController'
+    });
+
+    $stateProvider.state('home.contact.person', {
+      url: '/person',
+      templateUrl: path + '/person.html',
+      controller: 'PersonController'
     });
   }
 ]);
