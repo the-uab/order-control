@@ -14,15 +14,7 @@ angular.module('seedApp')
       templateUrl: path + '/about.html',
       controller: 'HomeController'
     });
-
-// <<<<<<< HEAD
-//     $stateProvider.state('home.contact', {
-//       url: 'contact',
-//       templateUrl: path + '/contact.html',
-// =======
-
-
-
+ 
     $urlRouterProvider.otherwise('/');
   }
 ]);
