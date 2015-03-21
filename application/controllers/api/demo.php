@@ -33,12 +33,13 @@ class Demo extends REST_Controller
     $this->response($persons, 200);
   }
 
-  function user_post()
+  function person_post()
   {
-    //$this->some_model->updateUser( $this->get('id') );
-    $message = array('id' => $this->get('id'), 'name' => $this->post('name'), 'email' => $this->post('email'), 'message' => 'ADDED!');
+    $input = (array)json_decode(file_get_contents("php://input"));
 
-    $this->response($message, 200); // 200 being the HTTP response code
+    // save
+    $person = $this->personModel->save($input);
+    $this->response($person, 200); // 200 being the HTTP response code
   }
 
   function user_delete()
