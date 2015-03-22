@@ -15,6 +15,12 @@ angular.module('seedApp')
       controller: 'HomeController'
     });
  
+  $stateProvider.state('home.vidal', {
+      url: 'vidal',
+      templateUrl: path + '/about.vidal',
+      controller: 'HomeController'
+    });
+
     $urlRouterProvider.otherwise('/');
   }
 ]);
