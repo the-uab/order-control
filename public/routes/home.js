@@ -17,7 +17,13 @@ angular.module('seedApp')
  
   $stateProvider.state('home.vidal', {
       url: 'vidal',
-      templateUrl: path + '/about.vidal',
+      templateUrl: path + '/vidal.html',
+      controller: 'HomeController'
+    });
+
+   $stateProvider.state('home.vidal2', {
+      url: 'vidal2',
+      templateUrl: path + '/vidal2.html',
       controller: 'HomeController'
     });
 
