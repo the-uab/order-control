@@ -51,6 +51,14 @@ angular.module('seedApp')
   		{
   			name:'ronald',
   			url: 'home.contact.ronald'
+  		},
+  		{
+  			name:'gere',
+  			url: 'home.contact.gere'
+  		},
+  		{
+  			name:'gereDos',
+  			url: 'home.contact.gereDos'
   		}
     ];
 

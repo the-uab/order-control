@@ -11,7 +11,6 @@ angular.module('seedApp')
     $scope.item = {};
 
     $scope.savePerson = function(item) {
-      console.log(item);
       Person.save(item, function(response) {
         $scope.persons.push(response);
       });
