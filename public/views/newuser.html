@@ -1,1 +1,10 @@
 <h1>New User</h1>
+
+<ul>
+	<li ng-repeat="user in users">
+		<b>nombre {{user.name}}</b>
+		edad {{user.age}}
+		<a ng-click="remove(user)">remove</a>
+	</li>
+</ul>
+<button ng-click="createNewUser()">new user</button>

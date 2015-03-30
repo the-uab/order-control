@@ -27,7 +27,7 @@ angular.module('seedApp')
     $stateProvider.state('sysadmin.newuser', {
       url: '/newuser',
       templateUrl: path + '/newuser.html',
-      controller: 'SysadminController'
+      controller: 'UsersController'
     });
 
     $urlRouterProvider.otherwise('/');

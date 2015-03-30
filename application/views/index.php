@@ -28,6 +28,7 @@
 		<script src="./public/controllers/contact.js"></script>
 		<script src="./public/controllers/sessions.js"></script>
 		<script src="./public/controllers/sysadmin.js"></script>
+		<script src="./public/controllers/users.js"></script>
 	</head>
 
 	<body>
