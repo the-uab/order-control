@@ -26,6 +26,8 @@
 		<script src="./public/controllers/main.js"></script>
 		<script src="./public/controllers/home.js"></script>
 		<script src="./public/controllers/contact.js"></script>
+		<script src="./public/controllers/sessions.js"></script>
+		<script src="./public/controllers/sysadmin.js"></script>
 	</head>
 
 	<body>
