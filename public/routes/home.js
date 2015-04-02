@@ -30,6 +30,21 @@ angular.module('seedApp')
       controller: 'UsersController'
     });
 
+    $stateProvider.state('home.pedidos', {
+      url: 'pedidos',
+      templateUrl: path + '/pedidos.html',
+      controller: 'HomeController'
+    });
+    $stateProvider.state('home.nuevoPedido', {
+      url: 'nuevoPedido',
+      templateUrl: path + '/nuevoPedido.html',
+      controller: 'HomeController'
+    });
+    $stateProvider.state('home.pedidosSolicitados', {
+      url: 'pedidosSolicitados',
+      templateUrl: path + '/pedidosSolicitados.html',
+      controller: 'HomeController'
+    });
     $urlRouterProvider.otherwise('/');
   }
 ]);
