@@ -1,0 +1,86 @@
+<script type="text/javascript"> 
+angular.module('ui.bootstrap.demo').controller('TabsDemoCtrl', function ($scope, $window) {
+  $scope.tabs = [
+    { title:'Dynamic Title 1', content:'Dynamic content 1' },
+    { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
+  ];
+
+  $scope.alertMe = function() {
+    setTimeout(function() {
+      $window.alert('You\'ve selected the alert tab!');
+    });
+  };
+});
+</script>
+
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Control de pedidos</a>
+        </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li ><a ui-sref="home">Inicio</a></li>
+        <li class="active"><a >Gestor Pedidos </a></li>
+        <li><a >Presuspuestos</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a>Presupuesto: Bs. 1500</a></li>
+        <li><a> Nombre Usuario - tesorero</a></li>
+        <li><a> Cerrar session</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  <br /><br />
+  <div class="container">
+
+    <table class="table"> 
+    <tr><td>Dep. Solicitante </td><td>Detalle Pedido </td><td>Presupuesto Dep.</td><td>Cantidad</td><td>Coste</td><td>Subtotal</td><td> Accion</td></tr>
+    <tr><td> Ingenieria           </td><td>Colores   </td><td>Bs. 400</td><td>8 </td><td>2 </td><td>16 </td><td><button class="btn btn-info">Aprobar</button></td></tr>
+    <tr><td> Enfermeria           </td><td>Hojas     </td><td>Bs. 40 </td><td>9 </td><td>3 </td><td>27 </td><td><button class="btn btn-info">Aprobar</button></td></tr>
+    <tr><td> Contaduria           </td><td>Boligrafos</td><td>Bs. 200</td><td>22</td><td>3</td><td>66</td><td><button class="btn btn-info">Aprovar</button></td></tr>
+    <tr><td> </td><td></td><td></td><td></td><td>Total: Bs </td><td><span class="badge">109</span></td><td></td></tr>
+    </table>
+
+    <ul class="nav nav-tabs"> 
+    <li role="presentation" class="active"> <a href="">Pedidos Aprovados</a>
+    <table class="table"> 
+    <tr><td>Detalle Pedido </td><td>Departamento Solicitante</td><td>Accion</td><td>Presupuesto</td><td>Cantidad</td></tr>
+    <tr><td>Colores </td>    <td> Ingenieria </td><td><button class="btn btn-success">Aprobado</button></td><td>Bs. 400</td><td>8</td></tr>
+    <tr><td>Hojas </td> <td> Enfermeria </td> <td><button class="btn btn-success">Aprobado</button></td><td>Bs. 40</td><td>9</td></tr>
+    <td><a href="#">Total Aprovados<span class="badge">2</span></a></td>
+    </table>
+    </li>
+    <li role="presentation" > <a href="">Pedidos Desaprovados</a>
+    <table class="table"> 
+    <tr><td>Detalle Pedido </td><td>Departamento Solicitante</td><td>Accion</td><td>Presupuesto</td><td>Cantidad</td></tr>
+    <tr><td>Boligrafos </td> <td> Contaduria </td><td><button class="btn btn-danger">Desprobado</button></td><td>Bs. 200</td><td>22</td></tr>
+    <td><a href="#">Total Desaprovados<span class="badge">1</span></a></td>
+    </table>
+    </li>
+    </ul>
+   </div>
+
+
+<ul id="myTab" class="nav nav-tabs" role="tablist"> 
+<li id="myTab" class="activa">
+        uno
+</li>
+<li>
+    dos
+</li>
+</ul>
+
+
+
+
+
+
+

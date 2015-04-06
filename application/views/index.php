@@ -13,8 +13,15 @@
 		<script src="./public/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 		<script src="./public/bower_components/jquery/dist/jquery.js"></script>
 
+        <script src="./public/assets/js/jquery-1.9.0.min.js" type="text/javascript"></script>
+        <script src="./public/assets/js/jquery-ui-1.10.0.custom.min.js" type="text/javascript"></script>
+        <script src="./public/assets/js/demo.js" type="text/javascript"></script> 
+		<link rel="stylesheet" href="./public/assets/css/jquery-ui-1.10.0.custom.css" />
+
 		<link rel="stylesheet" href="./public/assets/css/style.css">
 		<link rel="stylesheet" href="./public/bower_components/bootstrap/dist/css/bootstrap.css">
+
+
 
 		<script src="./public/app.js"></script>
 		<script src="./public/routes/home.js"></script>
@@ -29,6 +36,7 @@
 		<script src="./public/controllers/sessions.js"></script>
 		<script src="./public/controllers/sysadmin.js"></script>
 		<script src="./public/controllers/users.js"></script>
+		<script src="./public/controllers/treasurerS.js"></script>
 	</head>
 
 	<body>
