@@ -29,6 +29,11 @@ angular.module('seedApp')
       templateUrl: path + '/newuser.html',
       controller: 'UsersController'
     });
+     $stateProvider.state('juan', {
+      url: '/juan',
+      templateUrl: path + '/juan.html',
+      controller: 'juan'
+    });
 
     $urlRouterProvider.otherwise('/');
   }
