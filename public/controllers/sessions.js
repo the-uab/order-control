@@ -6,8 +6,13 @@ angular.module('seedApp')
 
   	$scope.login = function(item) {
   		console.log(item);
+  		if (item.email == "sysadmin") {
 
-  		$state.go('sysadmin');
+	  		$state.go('sysadmin');	
+  		} else {
+  			$state.go('treasure');
+  		}
   	}	
   }
 ]);
+

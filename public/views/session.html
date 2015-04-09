@@ -293,15 +293,15 @@ input[type="submit"]:hover, input[type="submit"]:focus {
 
   <body>
     <div id="container">
-      <form action="welcome.html">
+      <form ng-submit="login(item)">
         <div class="login">LOGIN</div>
         <div class="username-text">Usuario:</div>
         <div class="password-text">Contraseña:</div>
         <div class="username-field">
-          <input type="text" name="username" value="admin" />
+          <input type="text" name="username" ng-model="item.email" value="admin" />
         </div>
         <div class="password-field">
-          <input type="password" name="password" value="admin" />
+          <input type="password" name="password" ng-model="item.password" value="admin" />
         </div>
         <input type="checkbox" name="remember-me" id="remember-me" /><label for="remember-me">Recordar</label>
         <div class="forgot-usr-pwd">Olvidaste tu <a href="#">usuario</a> o <a href="#">contraseña</a>?</div>
