@@ -20,55 +20,111 @@
         <br>
         <p>
           Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Nam pretium turpis et arcu. Morbi mollis tellus ac sapien. Curabitur at lacus ac velit ornare lobortis. In ut quam vitae odio lacinia tincidunt.</p>
-        
-          <div class="table-responsive" style="max-width: 75%;">
-            <table class="table table-bordered table-hover ">
+          <script>
+               $(document).ready(function(){
+                  var i=1;
+                 $("#add_row").click(function(){
+                  $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
+
+                  $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+                  i++; 
+              });
+                 $("#delete_row").click(function(){
+                   if(i>1){
+                 $("#addr"+(i-1)).html('');
+                 i--;
+                 }
+               });
+
+            });
+          </script>
+
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+              Seleccione Categoria
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Categoria Papeles</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Categoria uno</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Categoria dos</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Categoria tres</a></li>
+            </ul>
+          </div>
+          <br><br>
+          <ul class="list-group" style="max-width: 75%;">
+            <li class="list-group-item">
+              <span class="badge">3500</span>
+              Papel Bond  tamaño carta
+            </li>
+            <li class="list-group-item">
+              <span class="badge">500</span>
+              Papel Sabana 
+            </li>
+            <li class="list-group-item">
+              <span class="badge">20</span>
+              Papel Resma 
+            </li>
+            <li class="list-group-item">
+              <span class="badge">14</span>
+              Papel bond tamaño oficio
+            </li>
+          </ul>
+          <br><br>
+        <div class="table-responsive" style="max-width: 75%;">
+        <a id="add_row" class="btn btn-default pull-left">Agregar a la lista</a>
+          <div class="row clearfix">
+          <div class="col-md-12 column">
+            <table class="table table-bordered table-hover" id="tab_logic">
               <thead>
-              <tr class="active">
-                <th class="col-md-1">N°</th>
-                <th >DESCRIPCION</th>
-                <th >CANTIDAD</th>
-                <th >PRECIO TOTAL</th>
-                <th class="center">GESTIÓN</th>
-              </tr>
+                <tr >
+                  <th class="text-center">
+                    N.
+                  </th>
+                  <th class="text-center">
+                    Descripción
+                  </th>
+                  <th class="text-center">
+                    Cantidad
+                  </th>
+                  <th class="text-center">
+                    Precio unitario
+                  </th>
+                  <th class="text-center">
+                    Precio parcial
+                  </th>
+                </tr>
               </thead>
               <tbody>
-              <tr >
-              <td>1</td>
-              <td>Ejemplo de descripcion de pedido</td><td>120</td><td>450.20</td>
-              <td class="center" >
-              <a href=""><span class="label label-info">Ver</span></a>
-              <a href=""><span class="label label-success">Editar</span></a>
-              <a href=""><span class="label label-danger">Eliminar</span></a></td></tr>
-              
-              <tr >
-              <td>2</td>
-              <td>CELDA</td><td>CELDA</td><td>CELDA</td>
-              <td class="center" >
-              <a href=""><span class="label label-info">Ver</span></a>
-              <a href=""><span class="label label-success">Editar</span></a>
-              <a href=""><span class="label label-danger">Eliminar</span></a></td></tr>
-              
-              <tr >
-              <td>3</td>
-              <td>CELDA</td><td>CELDA</td><td>CELDA</td>
-              <td class="center" >
-              <a href=""><span class="label label-info">Ver</span></a>
-              <a href=""><span class="label label-success">Editar</span></a>
-              <a href=""><span class="label label-danger">Eliminar</span></a></td></tr>
-              
-              <tr >
-              <td>4</td>
-              <td>CELDA</td><td>CELDA</td><td>CELDA</td>
-              <td class="center" >
-              <a href=""><span class="label label-info">Ver</span></a>
-              <a href=""><span class="label label-success">Editar</span></a>
-              <a href=""><span class="label label-danger">Eliminar</span></a></td></tr>
-              </tr>
-            </tbody>
-          </table>
-          <br>
-          <button type="submit" class="btn btn-primary">Enviar</button>
+                <tr id='addr0'>
+                  <td>
+                  1
+                  </td>
+                  <td>
+                  <input type="text" name='name0'  placeholder='descripcion' class="form-control"/>
+                  </td>
+                  <td>
+                  <input type="text" name='mail0' placeholder='cantidad' class="form-control"/>
+                  </td>
+                  <td>
+                  <input type="text" name='mobile0' placeholder='precio unitario' class="form-control"/>
+                  </td>
+                  <td>
+                  <input type="text" name='mobile0' placeholder='precio parcial' class="form-control"/>
+                  </td>
+                </tr>
+                          <tr id='addr1'></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <a id='delete_row' class="pull-right btn btn-default">Eliminar de la lista</a>
+      </div>
+
+          <br><br>
+          <div class="table-responsive" style="display:block;text-align:right;">
+            <button type="submit" class="btn btn-primary">Solicitar Pedido</button>
+          </div>
         </div>
 
   </div>
