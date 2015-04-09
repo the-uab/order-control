@@ -1,6 +1,6 @@
 <div class="container">
 <!-- Fixed navbar -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -15,7 +15,11 @@
       <ul class="nav navbar-nav">
         <li class="active"><a ui-sref="home">Inicio</a></li>
         <li><a ui-sref="home.session">Iniciar session</a></li>
+
         <li><a ui-sref="home.treasurer">Tesorero</a></li>
+
+        <li><a ui-sref="treasure">Tesorero</a></li>
+
       </ul>
     </div><!--/.nav-collapse -->
   </div>
@@ -23,6 +27,12 @@
 
 <div class="container">
   <div ui-view>
+
     <h1>Bienvenidos </h1>
+
+   <div class="jumbotron"> 
+    <h3 class="active">HOLA</h3>
+   </div>
+
   </div>
 </div> <!-- /container -->

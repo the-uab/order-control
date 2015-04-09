@@ -36,7 +36,9 @@
 		<script src="./public/controllers/sessions.js"></script>
 		<script src="./public/controllers/sysadmin.js"></script>
 		<script src="./public/controllers/users.js"></script>
-		<script src="./public/controllers/treasurerS.js"></script>
+		<script src="./public/controllers/treasure.js"></script>
+		
+
 	</head>
 
 	<body>
