@@ -50,7 +50,22 @@ angular.module('seedApp')
       templateUrl: path+'/admin_presupuesto.html',
       controller:'TreasureController'});
 
-    // nueva pestaña
+    $stateProvider.state('home.pedidos', {
+      url: 'pedidos',
+      templateUrl: path + '/pedidos.html',
+      controller: 'HomeController'
+    });
+    $stateProvider.state('home.nuevoPedido', {
+      url: 'nuevoPedido',
+      templateUrl: path + '/nuevoPedido.html',
+      controller: 'HomeController'
+    });
+    $stateProvider.state('home.pedidosSolicitados', {
+      url: 'pedidosSolicitados',
+      templateUrl: path + '/pedidosSolicitados.html',
+      controller: 'HomeController'
+    });
+
     $urlRouterProvider.otherwise('/');
   }
 ]);
