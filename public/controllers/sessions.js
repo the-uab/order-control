@@ -8,12 +8,11 @@ angular.module('seedApp')
 
   		if (item.email == "sysadmin") {
 
-	  		$state.go('treasure');	
+	  		$state.go('sysadmin');	
   		} else {
   			$state.go('treasure');
   		}
 
-  	}	
+  	}
   }
 ]);
-
