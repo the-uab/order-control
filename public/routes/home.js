@@ -65,7 +65,11 @@ angular.module('seedApp')
       templateUrl: path + '/pedidosSolicitados.html',
       controller: 'HomeController'
     });
-
+    $stateProvider.state('home.producto', {
+      url: 'product',
+      templateUrl: path + '/producto.html',
+      controller: 'productController'
+    });
     $urlRouterProvider.otherwise('/');
   }
 ]);

@@ -41,8 +41,9 @@ class Demo extends REST_Controller
     $this->response($person, 200); // 200 being the HTTP response code
   }
 
-  function user_delete()
+  function user_delete($id)
   {
+    
   }
 
   function users_get()
