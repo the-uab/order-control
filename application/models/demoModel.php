@@ -1,8 +1,11 @@
 <?php
 
-class PersonModel extends CI_Model {
+class DemoModel extends CI_Model {
   // table name
-  private $tbl_person= 'tbl_person';
+  // private $demo= 'demo';
+
+  // table name
+  private $tbl_person= 'demo';
 
   function Person(){
     parent::Model();
@@ -19,6 +22,7 @@ class PersonModel extends CI_Model {
   // get person by id
   function get_by_id($id){
     $this->db->where('id', $id);
+    $this->db->order_by('id', $id);
     return $this->db->get($this->tbl_person);
   }
   // add new person

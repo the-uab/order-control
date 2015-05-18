@@ -18,6 +18,7 @@ angular.module('seedApp')
   	$scope.remove = function(user) {
   	  console.log(user);
   	}
+
   	$scope.createNewUser = function() {
   		var user = {
   			name: 'default',
