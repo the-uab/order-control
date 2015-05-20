@@ -32,7 +32,6 @@ class categoryProductController extends REST_Controller
         */
 
     }
-
     function categoryProduct_get()
     {
         $categoryProduct = $this->categoryProduct->getAll()->result();
@@ -40,14 +39,11 @@ class categoryProductController extends REST_Controller
         {
             $this->response($categoryProduct, 200); // 200 being the HTTP response code
         }
-
         else
         {
             $this->response(array('error' => 'categoryProduct could not be found'), 404);
         }
-        
     }
-
     function categoryProduct_post()
     {
         //$this->some_model->updatecategoryProduct( $this->get('id') );
@@ -55,7 +51,6 @@ class categoryProductController extends REST_Controller
 
         $this->response($message, 200); // 200 being the HTTP response code
     }
-
     function categoryProduct_delete()
     {
     	//$this->some_model->deletesomething( $this->get('id') );
@@ -64,14 +59,10 @@ class categoryProductController extends REST_Controller
         $this->response($message, 200); // 200 being the HTTP response code
         */
     }
-
-
 	public function send_post()
 	{
 		//var_dump($this->request->body);
 	}
-
-
 	public function send_put()
 	{
 		//var_dump($this->put('foo'));
