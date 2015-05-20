@@ -40,7 +40,7 @@ class ProductController extends REST_Controller
         $product = $this->products->get_with_category()->result();
         if($product)
         {
-            $this->response($product, 200); // 200 being the HTTP response code
+            $this->response($product, 200);
         }
 
         else
