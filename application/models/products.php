@@ -26,20 +26,22 @@ class Products extends CI_Model {
   // add new product
   function save($product){
     $this->db->insert($this->tbl_product, $product);
+    //para mostrar en el postman
     return (array)$this->get_by_id($this->db->insert_id())->row();
   }
   // update product by id
   function update($id, $product){
-    $this->db->where('id', $id);
+    $this->db->where('ID_ITEM', $id);
     $this->db->update($this->tbl_product, $product);
   }
   // delete product by id
-  function delete($id){
-    $this->db->where('id', $id);
+  function delete($id)
+  {
+    $this->db->where('ID_ITEM', $id);
     $this->db->delete($this->tbl_product);
   }
   function get_by_id($id){
-    $this->db->where('id', $id);
+    $this->db->where('ID_ITEM', $id);
     return $this->db->get($this->tbl_product);
   }
 }

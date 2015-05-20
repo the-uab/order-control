@@ -1,50 +1,42 @@
-<div class="container">
-
-  <div class="jumbotron">
 
       <b><h3 class="center">Nuevo Producto</h3></b>
 
-        <form class="form-horizontal">
-          <div class="form-group">
+        <form class="form-horizontal" ng-submit="saveProduct(item)">
+          <div class="form-group" >
             <label for="descripcion" class="col-sm-2 control-label">Descripción</label>
             <div class="col-sm-4">
-              <input type="text" class="form-control" id="descripcion" placeholder="Nombre del Producto">
+              <input type="text" ng-model="item.DESCRIPCION" class="form-control"  placeholder="Nombre del Producto">
             </div>
           </div>
           <div class="form-group">
             <label for="descripcion" class="col-sm-2 control-label">Categoria</label>
             <div class="col-sm-4">
-              <select name="autor" id="autor" required>
-              <option value="">Seleccione Autor</option>
-              <option value="">Seleccione Autor</option>
-              <option value="">Seleccione Autor</option>
-              <option value="">Seleccione Autor</option>
-              <option value="">Seleccione Autor</option>
+              <!-- <select name="autor"  ng-model="ITEM.CATEGORIA" ng-repeat="categoryProduct in category">
+              <option value=""> {{category.DESCRIPCION}}</option> -->
+              <select name="autor"  REQUIRED ng-model="item.ID_CATEGORIA_ITEM">
+              <option value=""> SELECCIONE OPCION</option>
+              <option value="1">MATERIAL DE OFICINA</option>
+              <option value="2">MATERIAL DE COCINA</option>
+              <option value="3">MATERIAL DE MANTENIMIENTO</option>
               </select>
             </div>
           </div>
-          
+           
           <div class="form-group">
             <label for="precio" class="col-sm-2 control-label">Precio Unitario</label>
             <div class="col-sm-3">
-              <input type="text" class="form-control" id="precio" placeholder="Precio por unidad">
+              <input type="text" ng-model="item.PRECIO" class="form-control"  placeholder="Precio por unidad">
             </div>
           </div>
             <div class="form-group">
             <label for="stock" class="col-sm-2 control-label">Stock</label>
             <div class="col-sm-3">
-              <input type="text" class="form-control" id="precio" placeholder="Cantida existente">
+              <input type="text" ng-model="item.STOCK" class="form-control"  placeholder="Cantidad existente">
             </div>
           </div>
-
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-primary">Registrar Producto</button>
-            </div>
-          </div>
+              <button type="submit" class="btn btn-primary" >Registrar Producto</button>
         </form>
         <div>
-
 </div>
         <div class="table-responsive" style="max-width: 85%;">
         
@@ -54,7 +46,7 @@
               <thead>
                 <tr >
                   <th class="text-center">
-                    N.
+                    Nº
                   </th>
                   <th class="text-center">
                     Descripción
@@ -65,7 +57,9 @@
                   <th class="text-center">
                     Precio unitario
                   </th>
-
+                  <th class="text-center">
+                    Gestión
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -82,6 +76,12 @@
                   <td>
                    {{product.PRECIO}}
                   </td>
+                  <td>
+                   <button class="btn btn-danger">X</button>
+                   <button class="btn btn-success">O</button>
+                   <button class="btn btn-warning">E</button>
+                  </td>
+
                 </tr>
                           <tr id='addr1'></tr>
               </tbody>
@@ -91,7 +91,3 @@
         <!--<a id='delete_row' class="pull-right btn btn-default">Eliminar de la lista</a>-->
       </div>
         </div>
-
-  </div>
-
-</div>

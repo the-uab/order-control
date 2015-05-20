@@ -7,9 +7,8 @@ angular.module('seedApp')
     Person.get({}, function(response) {
       $scope.persons = response;
     });
-
     $scope.item = {};
-
+    
     $scope.savePerson = function(item) {
       Person.save(item, function(response) {
         $scope.persons.push(response);

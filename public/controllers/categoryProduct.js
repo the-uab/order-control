@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('seedApp')
-.controller('categoryProductController', ['$scope', 'Product',
-  function($scope, Product) {
-    $scope.products = [];
+.controller('categoryProductController', ['$scope', 'categoryProduct',
+  function($scope, categoryProduct) {
+    $scope.categoryProduct = [];
     Product.get({}, function(response) {
       console.log(response);
-      $scope.products = response;
+      $scope.categoryProduct = response;
     });
 
     $scope.item = {};

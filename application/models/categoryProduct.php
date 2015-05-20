@@ -16,16 +16,17 @@ class CategoryProduct extends CI_Model {
   // add new categoryProduct
   function save($categoryProduct){
     $this->db->insert($this->tbl_categoryProduct, $categoryProduct);
+    //para mostrar en el postman
     return (array)$this->get_by_id($this->db->insert_id())->row();
   }
   // update categoryProduct by id
   function update($id, $categoryProduct){
-    $this->db->where('id', $id);
+    $this->db->where('ID_CATEGORIA_ITEM', $id);
     $this->db->update($this->tbl_categoryProduct, $categoryProduct);
   }
   // delete categoryProduct by id
   function delete($id){
-    $this->db->where('id', $id);
+    $this->db->where('ID_CATEGORIA_ITEM', $id);
     $this->db->delete($this->tbl_categoryProduct);
   }
   function get_by_id($id){

@@ -23,41 +23,31 @@ class categoryProductController extends REST_Controller
         // Construct our parent class
         parent::__construct();
         $this->load->model('categoryProduct','',TRUE);
-        // Configure limits on our controller methods. Ensure
-        // you have created the 'limits' table and enabled 'limits'
-        // within application/config/rest.php
-        /*$this->methods['categoryProduct_get']['limit'] = 500; //500 requests per hour per categoryProduct/key
-        $this->methods['categoryProduct_post']['limit'] = 100; //100 requests per hour per categoryProduct/key
-        $this->methods['categoryProduct_delete']['limit'] = 50; //50 requests per hour per categoryProduct/key
-        */
-
     }
     function categoryProduct_get()
     {
         $categoryProduct = $this->categoryProduct->getAll()->result();
-        if($categoryProduct)
-        {
+        if($categoryProduct){
             $this->response($categoryProduct, 200); // 200 being the HTTP response code
         }
-        else
-        {
-            $this->response(array('error' => 'categoryProduct could not be found'), 404);
+        else{
+            $this->response(array('error' => 'categoria de producto no encontrada'), 404);
         }
     }
     function categoryProduct_post()
-    {
-        //$this->some_model->updatecategoryProduct( $this->get('id') );
-        $message = array('id' => $this->get('id'), 'name' => $this->post('name'), 'email' => $this->post('email'), 'message' => 'ADDED!');
+    {        
+        $input = (array)json_decode(file_get_contents("php://input"));
+        $product=$this->categoryProduct->save($input);
+        $this->response($product, 200); // 200 being the HTTP response code
 
-        $this->response($message, 200); // 200 being the HTTP response code
     }
     function categoryProduct_delete()
     {
     	//$this->some_model->deletesomething( $this->get('id') );
         /*$message = array('id' => $this->get('id'), 'message' => 'DELETED!');
-
         $this->response($message, 200); // 200 being the HTTP response code
         */
+        
     }
 	public function send_post()
 	{

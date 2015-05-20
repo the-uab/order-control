@@ -70,6 +70,7 @@ angular.module('seedApp')
       templateUrl: path + '/producto.html',
       controller: 'productController'
     });
+    
     $urlRouterProvider.otherwise('/');
   }
 ]);

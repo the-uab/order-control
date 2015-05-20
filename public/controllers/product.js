@@ -8,13 +8,21 @@ angular.module('seedApp')
       console.log(response);
       $scope.products = response;
     });
-
     $scope.item = {};
-
-   /* $scope.savePerson = function(item) {
+    
+    $scope.saveProduct = function(item) {
       Product.save(item, function(response) {
         $scope.products.push(response);
+        console.log(response);
       });
-    }*/
+    }
+/*
+     $scope.saveProduct = function(item) {
+      Product.save(item, function(response) {
+        $scope.products.push(response);
+        console.log(response);
+      });
+    }
+*/
   }
 ]);

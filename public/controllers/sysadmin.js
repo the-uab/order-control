@@ -1,12 +1,11 @@
 'use strict';
 
 angular.module('seedApp')
-.controller('SysadminController', ['$scope', '$state', 'Person',
-  function($scope, $state, Person) {
+.controller('SysadminController', ['$scope', '$state', 'Person','Product',
+  function($scope, $state, Person,Product) {
   	$scope.cerrarSession = function() {
   		$state.go('home')
   	}
-
 
   	$scope.persons = [];
     Person.get({}, function(response) {
@@ -15,12 +14,13 @@ angular.module('seedApp')
 
     $scope.item = {};
 
-    $scope.savePerson = function(item) {
+   
 
-      console.log(item);
-      Person.save(item, function(response) {
-        $scope.persons.push(response);
+     $scope.saveProduct = function(item) {
+      Product.save(item, function(response) {
+        $scope.products.push(response);
       });
     }
+
   }
 ]);
