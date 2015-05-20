@@ -12,6 +12,7 @@ class CategoryProduct extends CI_Model {
     
     return $this->db->get($this->tbl_categoryProduct);
   }
+
   // add new categoryProduct
   function save($categoryProduct){
     $this->db->insert($this->tbl_categoryProduct, $categoryProduct);

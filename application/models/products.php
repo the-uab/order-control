@@ -14,6 +14,15 @@ class Products extends CI_Model {
     
     return $this->db->get($this->tbl_product);
   }
+    function get_with_category(){
+      $this->db->select('*');    
+        $this->db->from('t_item');
+        $this->db->join('tpar_categoria_item', 't_item.ID_CATEGORIA_ITEM = tpar_categoria_item.ID_CATEGORIA_ITEM');
+        
+        return $this->db->get();
+    
+    //return $this->db->get($this->tbl_categoryProduct);
+  }
   // add new product
   function save($product){
     $this->db->insert($this->tbl_product, $product);
