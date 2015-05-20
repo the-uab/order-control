@@ -1,5 +1,4 @@
 'use strict';
-
 angular.module('seedApp')
 .controller('categoryProductController', ['$scope', 'categoryProduct',
   function($scope, categoryProduct) {
@@ -8,9 +7,7 @@ angular.module('seedApp')
       console.log(response);
       $scope.categoryProduct = response;
     });
-
     $scope.item = {};
-
    /* $scope.savePerson = function(item) {
       Product.save(item, function(response) {
         $scope.products.push(response);
