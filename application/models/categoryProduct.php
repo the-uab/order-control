@@ -1,10 +1,10 @@
 <?php
 
 class CategoryProduct extends CI_Model {
-	private $tbl_categoryProduct= 'tpar_category_item';
+	private $tbl_categoryProduct= 'tpar_categoria_item';
 
   function CategoryProduct(){
-    parent::Model();
+    parent::__construct();
   }
 
   // get categoryProducts with paging
@@ -28,7 +28,7 @@ class CategoryProduct extends CI_Model {
     $this->db->delete($this->tbl_categoryProduct);
   }
   function get_by_id($id){
-    $this->db->where('id', $id);
+    $this->db->where('ID_CATEGORIA_ITEM', $id);
     return $this->db->get($this->tbl_categoryProduct);
   }
 }

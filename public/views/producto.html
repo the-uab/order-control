@@ -48,14 +48,7 @@
           </div>
         </form>
         <div>
-  <ul>
-    <li ng-repeat="product in products">
-      {{product.ID_ITEM}}
-      {{product.DESCRIPCION}}
-      {{product.PRECIO}}
-      <li>OTRAYDKT</li>
-    </li>
-  </ul>
+
 </div>
         <div class="table-responsive" style="max-width: 85%;">
         
@@ -80,18 +73,18 @@
                 </tr>
               </thead>
               <tbody>
-                <tr id='addr0'>
+                <tr id='addr0'ng-repeat="product in products">
                   <td>
                   1
                   </td>
                   <td>
-                  <input type="text" name='name0'  placeholder='descripcion' class="form-control"/>
+                  {{product.ID_ITEM}}
                   </td>
                   <td>
-                  <input type="text" name='mail0' placeholder='Stock' class="form-control"/>
+                  {{product.DESCRIPCION}}
                   </td>
                   <td>
-                  <input type="text" name='mobile0' placeholder='precio unitario' class="form-control"/>
+                   {{product.PRECIO}}
                   </td>
                 </tr>
                           <tr id='addr1'></tr>

@@ -23,6 +23,7 @@ class ProductController extends REST_Controller
         // Construct our parent class
         parent::__construct();
         $this->load->model('products','',TRUE);
+        $this->load->model('categoryProduct','',TRUE);
         // Configure limits on our controller methods. Ensure
         // you have created the 'limits' table and enabled 'limits'
         // within application/config/rest.php
@@ -36,6 +37,14 @@ class ProductController extends REST_Controller
     function product_get()
     {
         $product = $this->products->getAll()->result();
+        
+        $productoComplete=[];
+        foreach ($product as $p) {
+            
+                $productoComplete= $this->categoryProduct->get_by_id(1)->result();
+        }
+
+//        $producto=$this->categoryProduct->getById($products[0]->ProductId)
         if($product)
         {
             $this->response($product, 200); // 200 being the HTTP response code
