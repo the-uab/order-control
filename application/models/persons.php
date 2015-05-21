@@ -22,4 +22,5 @@ class Persons extends CI_Model {
     $this->db->where('id_person', $id);
     $this->db->delete($this->tbl);
   }
+
 }

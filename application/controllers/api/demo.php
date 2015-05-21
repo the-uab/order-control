@@ -41,8 +41,9 @@ class Demo extends REST_Controller
     $this->response($person, 200); // 200 being the HTTP response code
   }
 
-  function user_delete()
+  function user_delete($id)
   {
+<<<<<<< HEAD
     //Conexion con la base
       mysql_connect("localhost","root","usbs");
 
@@ -62,6 +63,9 @@ class Demo extends REST_Controller
       {echo '<option>'.$row["id_user"];}
       mysql_free_result($result)
       
+=======
+    
+>>>>>>> af11c2c546c19e80c8ebedb1c051e0f0c3278237
   }
 
   function users_get()
