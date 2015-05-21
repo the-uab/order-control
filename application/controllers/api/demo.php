@@ -43,6 +43,25 @@ class Demo extends REST_Controller
 
   function user_delete()
   {
+    //Conexion con la base
+      mysql_connect("localhost","root","usbs");
+
+      //selección de la base de datos con la que vamos a trabajar 
+      mysql_select_db("order"); 
+
+      echo '<FORM METHOD="POST" ACTION="borrar2.php">Nombre<br>';
+
+      //Creamos la sentencia SQL y la ejecutamos
+      $sSQL="Select id_user From user Order By id_user";
+      $result=mysql_query($sSQL);
+
+      echo '<select name="1">';
+
+      //Mostramos los registros en forma de menú desplegable
+      while ($row=mysql_fetch_array($result))
+      {echo '<option>'.$row["id_user"];}
+      mysql_free_result($result)
+      
   }
 
   function users_get()
