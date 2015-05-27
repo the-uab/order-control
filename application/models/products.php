@@ -8,19 +8,16 @@ class Products extends CI_Model {
     //parent::Model();
     parent::__construct();
   }
-
   // get products with paging
-  function getAll(){
-    
+  function getAll()
+  { 
     return $this->db->get($this->tbl_product);
   }
     function get_with_category(){
-      $this->db->select('t_item.ID_ITEM,t_item.DESCRIPCION as NOMBRE_PRODUCTO, tpar_categoria_item.ID_CATEGORIA_ITEM,tpar_categoria_item.DESCRIPCION AS CATEGORIA, PRECIO, FECHA_COMPRA,STOCK');    
+      $this->db->select('t_item.ID_ITEM,t_item.DESCRIPCION as DESCRIPCION, tpar_categoria_item.ID_CATEGORIA_ITEM,tpar_categoria_item.DESCRIPCION AS CATEGORIA, PRECIO, FECHA_COMPRA,STOCK');    
         $this->db->from('t_item');
         $this->db->join('tpar_categoria_item', 't_item.ID_CATEGORIA_ITEM = tpar_categoria_item.ID_CATEGORIA_ITEM');
-        
-        return $this->db->get();
-    
+        return $this->db->get();  
     //return $this->db->get($this->tbl_categoryProduct);
   }
   // add new product

@@ -13,6 +13,10 @@ angular.module('seedApp').factory('Product', ['$resource',
       },
       update: {
         method: 'PUT'
+      },
+      delete: {
+        url: './api/productController/product/ID_ITEM/:ID_ITEM',
+        method: 'DELETE'
       }
     });
   }

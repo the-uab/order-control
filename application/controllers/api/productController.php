@@ -31,22 +31,21 @@ class ProductController extends REST_Controller
             $this->response($products, 200);
         }
         else{
-            $this->response(array('error' => 'product could not be found'), 404);
+            $this->response(array('error' => 'producto no encontrado'), 404);
         }
     }
 
     function product_post()
     {
         $input=(array)json_decode(file_get_contents("php://input"));
+        echo $input;
         $product=$this->products->save($input);
         $this->response($product, 200);
     }
 
     function product_delete()
     {
-        $input = $this->get('ID_ITEM');
-        //print_r($input);
-        $userId = $input;
+        $userId = $this->get('ID_ITEM');
         $this->products->delete($userId);
         $this->response(array('param'=>$userId), 200);
     }
