@@ -53,7 +53,7 @@ angular.module('seedApp')
     $stateProvider.state('home.pedidos', {
       url: 'pedidos',
       templateUrl: path + '/pedidos.html',
-      controller: 'HomeController'
+      controller: 'PedidosController'
     });
     $stateProvider.state('home.nuevoPedido', {
       url: 'nuevoPedido',

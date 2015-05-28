@@ -40,6 +40,8 @@
 		<script src="./public/controllers/treasure.js"></script>
 		<script src="./public/controllers/product.js"></script>
 
+		<script src="./public/controllers/pedidos.js"></script>
+
 	</head>
 
 	<body>

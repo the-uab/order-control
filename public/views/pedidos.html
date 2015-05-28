@@ -20,16 +20,36 @@
         <br>
         <p>
           Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Nam pretium turpis et arcu. Morbi mollis tellus ac sapien. Curabitur at lacus ac velit ornare lobortis. In ut quam vitae odio lacinia tincidunt.</p>
+          <br>
+
+          <form class="form-horizontal">
+           <div class="form-group">
+            <label for="precio" class="col-sm-1 control-label">Solicitante:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="precio" placeholder="Solicitante">
+            </div>
+          </div>
+
+          </form>
+        
+
+        
+          
+
+
+
+
+
         
           <div class="table-responsive" style="max-width: 75%;">
             <table class="table table-bordered table-hover ">
               <thead>
               <tr class="active">
                 <th class="col-md-1">N°</th>
-                <th >DESCRIPCION</th>
+                <th >DETALLE</th>
                 <th >CANTIDAD</th>
                 <th >PRECIO TOTAL</th>
-                <th class="center">GESTIÓN</th>
+                <th class="center">OPCIONES</th>
               </tr>
               </thead>
               <tbody>
@@ -37,7 +57,7 @@
               <td>1</td>
               <td>Ejemplo de descripcion de pedido</td><td>120</td><td>450.20</td>
               <td class="center" >
-              <a href=""><span class="label label-info" text="">Ver</span></a>
+              
               <a href=""><span class="label label-success">Editar</span></a>
               <a href=""><span class="label label-danger">Eliminar</span></a></td></tr>
               
@@ -45,7 +65,7 @@
               <td>2</td>
               <td>CELDA</td><td>CELDA</td><td>CELDA</td>
               <td class="center" >
-              <a href=""><span class="label label-info">Ver</span></a>
+              
               <a href=""><span class="label label-success">Editar</span></a>
               <a href=""><span class="label label-danger">Eliminar</span></a></td></tr>
               
@@ -53,17 +73,45 @@
               <td>3</td>
               <td>CELDA</td><td>CELDA</td><td>CELDA</td>
               <td class="center" >
-              <a href=""><span class="label label-info">Ver</span></a>
-              <a href=""><span class="label label-success">Editar</span></a>
-              <a href=""><span class="label label-danger">Eliminar</span></a></td></tr>
               
-              <tr >
-              <td>4</td>
-              <td>CELDA</td><td>CELDA</td><td>CELDA</td>
-              <td class="center" >
-              <a href=""><span class="label label-info">Ver</span></a>
-              <a href=""><span class="label label-success">Editar</span></a>
-              <a href=""><span class="label label-danger">Eliminar</span></a></td></tr>
+              
+              <tr ng-repeat="pedido in pedidos">
+                <td></td>
+                <td>{{pedido.detalle}}</td>
+                <td>{{pedido.cantidad}}</td>
+                <td>{{pedido.precio}}</td>
+                <td class="center">
+                  <a ng-click="eliminarPedidos($index)"><span class="label label-danger">Eliminar</span></a>
+                </td>
+              </tr>
+              </tr>
+              <tr>
+              <td></td>
+                
+                <td>
+                  <div class="form-group">
+                    <div>
+                      <input type="text" class="form-control" ng-model="item.detalle" placeholder="detalle">
+                    </div>
+                  </div>
+                </td>
+                <td>
+                <div class="form-group">
+                <div>
+              <input type="text" class="form-control" ng-model="item.cantidad" placeholder="cantidad">
+            </div>
+          </div>  
+                </td>
+              <td>
+                <div class="form-group">
+            <div>
+              <input type="text" class="form-control" ng-model="item.precio" placeholder="precio">
+            </div>
+          </div>  
+                </td>
+                <td class="center" >
+              
+                <a ng-click="guardarPedidos(item)"><span class="label label-info">guardar</span></a>
               </tr>
             </tbody>
           </table>
