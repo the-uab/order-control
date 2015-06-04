@@ -1,0 +1,27 @@
+<div class="container">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Administrador</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a ui-sref="administrador.pedido">Control de pedidos</a></li>
+        <li><a ui-sref="administrador.autorizacion">autorizacion de pedidos</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a>Administrador</a></li>
+        <li><a>Cerrar session</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div class="container">
+    <div ui-view>
+      <div class="jumbotron">
+        <h4>Bienvenidos a la pagina de</p>
+        <h2>Administrador</h2>
+      </div>
+    </div>
+  </div>
+</div>

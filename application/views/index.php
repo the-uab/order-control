@@ -30,6 +30,7 @@
 		<script src="./public/controllers/almacen/almacen.js"></script>
 		<script src="./public/controllers/almacen/productos.js"></script>
 		<script src="./public/controllers/almacen/pedidos.js"></script>
+		<script src="./public/controllers/administrador/administrador.js"></script>
 		<!-- update -->
 
 		<script src="./public/services/persons.js"></script>

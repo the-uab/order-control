@@ -4,12 +4,20 @@ angular.module('seedApp')
   function($urlRouterProvider, $stateProvider) {
     var path = './public/views';
 
+    // PUBLIC
     $stateProvider.state('main', {
       url: '/',
       templateUrl: path + '/index.html',
       controller: 'MainController'
     });
 
+    $stateProvider.state('main.session', {
+      url: 'session',
+      templateUrl: path + '/session.html',
+      controller: 'SessionsController'
+    });
+
+    // TESORERO
     $stateProvider.state('treasurer', {
       url: '/treasurer',
       templateUrl: path + '/treasurer.html',
@@ -22,14 +30,15 @@ angular.module('seedApp')
       controller: 'SysadminController'
     });
 
+    // ALMACEN
     $stateProvider.state('almacen', {
       url: '/almacen',
       templateUrl: path + '/almacen/index.html',
       controller: 'AlmacenController'
     });
 
-    $stateProvider.state('almacen.control', {
-      url: '/control',
+    $stateProvider.state('almacen.pedido', {
+      url: '/pedido',
       templateUrl: path + '/almacen/paginas/pedidos.html',
       controller: 'PedidosController'
     });
@@ -40,14 +49,23 @@ angular.module('seedApp')
       controller: 'ProductosController'
     });
 
-    $stateProvider.state('main.session', {
-      url: 'session',
-      templateUrl: path + '/session.html',
-      controller: 'SessionsController'
+    // ADMINISTRADOR
+    $stateProvider.state('administrador', {
+      url: '/administrador',
+      templateUrl: path + '/administrador/index.html',
+      controller: 'AdministradorController'
+    });
+    $stateProvider.state('administrador.pedido', {
+      url: '/pedido',
+      templateUrl: path + '/administrador/paginas/pedidos.html',
+      controller: 'PedidosController'
     });
 
-
-
+    $stateProvider.state('administrador.autorizacion', {
+      url: '/productos',
+      templateUrl: path + '/administrador/paginas/productos.html',
+      controller: 'ProductosController'
+    });
 
 
 
