@@ -17,17 +17,29 @@ angular.module('seedApp')
       controller: 'SessionsController'
     });
 
-    // TESORERO
-    $stateProvider.state('treasurer', {
-      url: '/treasurer',
-      templateUrl: path + '/treasurer.html',
-      controller: 'TreasureController'
-    });
-
+    // SYSADMIN
     $stateProvider.state('sysadmin', {
       url: '/sysadmin',
-      templateUrl: path + '/sysadmin.html',
+      templateUrl: path + '/sysadmin/index.html',
       controller: 'SysadminController'
+    });
+
+    $stateProvider.state('sysadmin.pedidos', {
+      url: '/users',
+      templateUrl: path + '/sysadmin/paginas/pedidos.html',
+      controller: 'SysadminController'
+    });
+
+    $stateProvider.state('sysadmin.session', {
+      url: '/users',
+      templateUrl: path + '/sysadmin/paginas/session.html',
+      controller: 'SysadminController'
+    });
+
+    $stateProvider.state('sysadmin.users', {
+      url: '/users',
+      templateUrl: path + '/sysadmin/paginas/users.html',
+      controller: 'SysadminUsersController'
     });
 
     // ALMACEN
@@ -67,14 +79,27 @@ angular.module('seedApp')
       controller: 'ProductosController'
     });
 
-
-
-
-    $stateProvider.state('sysadmin.newuser', {
-      url: '/newuser',
-      templateUrl: path + '/newuser.html',
-      controller: 'UsersController'
+    // AUTH
+    $stateProvider.state('auth', {
+      url: '/auth',
+      templateUrl: path + '/auth/index.html',
+      controller: 'AuthenticationController'
     });
+
+    $stateProvider.state('auth.pedido', {
+      url: '/pedido',
+      templateUrl: path + '/auth/paginas/pedidos.html',
+      controller: 'PedidosController'
+    });
+
+    $stateProvider.state('auth.productos', {
+      url: '/productos',
+      templateUrl: path + '/auth/paginas/productos.html',
+      controller: 'ProductosController'
+    });
+
+
+    
 
     $stateProvider.state('treasure', {
       url: '/',

@@ -31,21 +31,16 @@
 		<script src="./public/controllers/almacen/productos.js"></script>
 		<script src="./public/controllers/almacen/pedidos.js"></script>
 		<script src="./public/controllers/administrador/administrador.js"></script>
+		<script src="./public/controllers/auth/authentication.js"></script>
+		<script src="./public/controllers/sysadmin/sysadmin.js"></script>
+		<script src="./public/controllers/public/contact.js"></script>
 		<!-- update -->
 
 		<script src="./public/services/persons.js"></script>
 		<script src="./public/services/product.js"></script>
 		<script src="./public/services/categoryProduct.js"></script>
-		
-		<script src="./public/controllers/person.js"></script>
-		<script src="./public/controllers/home.js"></script>
-		<script src="./public/controllers/contact.js"></script>
-		<script src="./public/controllers/sessions.js"></script>
-		<script src="./public/controllers/sysadmin.js"></script>
-		<script src="./public/controllers/users.js"></script>
-		<script src="./public/controllers/treasure.js"></script>
-		<script src="./public/controllers/product.js"></script>
-		<script src="./public/controllers/categoryProduct.js"></script>
+
+
 
 	</head>
 

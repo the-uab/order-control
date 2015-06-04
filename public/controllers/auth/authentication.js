@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('seedApp')
-.controller('TreasureController', ['$scope',
+.controller('AuthenticationController', ['$scope',
   function($scope) {
 
   }

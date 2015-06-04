@@ -6,7 +6,7 @@ angular.module('seedApp')
 
     var path = './public/views/contact';
 
-    $stateProvider.state('home.contact', {
+    $stateProvider.state('main.contact', {
       url: 'contact',
       templateUrl: path + '/contact.html',
       controller: 'ContactController'

@@ -3,12 +3,13 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Control de pedidos</a>
+      <a class="navbar-brand" ui-sref="main">Control de pedidos</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a ui-sref="home.pedidos">Pedidos</a></li>
-        <li><a ui-sref="home.producto">Productos</a></li>
+        <li><a ui-sref="main.contact">Contactanos</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <li><a ui-sref="home.session">Iniciar session</a></li>
       </ul>
     </div>
@@ -30,7 +31,7 @@
         <a ui-sref="administrador">administrador</a>
       </li>
       <li>
-        <a ui-sref="treasurer">tesorero</a>
+        <a ui-sref="auth">Autenticación</a>
       </li>
       <li>
         <a ui-sref="sysadmin">Sysadmin</a>
