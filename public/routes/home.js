@@ -98,45 +98,6 @@ angular.module('seedApp')
       controller: 'ProductosController'
     });
 
-
-    
-
-    $stateProvider.state('treasure', {
-      url: '/',
-      templateUrl: path + '/treasure.html',
-      controller: 'TreasureController'
-    });
-
-    $stateProvider.state('treasure.admin_pedido',{
-      url:'admin_pedido',
-      templateUrl: path+'/admin_pedido.html',
-      controller:'TreasureController'});
-
-    $stateProvider.state('treasure.admin_presupuesto',{
-      url:'admin_presupuesto',
-      templateUrl: path+'/admin_presupuesto.html',
-      controller:'TreasureController'});
-
-    $stateProvider.state('home.pedidos', {
-      url: 'pedidos',
-      templateUrl: path + '/pedidos.html',
-      controller: 'HomeController'
-    });
-    $stateProvider.state('home.nuevoPedido', {
-      url: 'nuevoPedido',
-      templateUrl: path + '/nuevoPedido.html',
-      controller: 'HomeController'
-    });
-    $stateProvider.state('home.pedidosSolicitados', {
-      url: 'pedidosSolicitados',
-      templateUrl: path + '/pedidosSolicitados.html',
-      controller: 'HomeController'
-    });
-    $stateProvider.state('home.producto', {
-      url: 'product',
-      templateUrl: path + '/producto.html',
-      controller: 'productController'
-    });
     $urlRouterProvider.otherwise('/');
   }
 ]);
