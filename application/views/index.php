@@ -21,18 +21,22 @@
 		<link rel="stylesheet" href="./public/assets/css/style.css">
 		<link rel="stylesheet" href="./public/bower_components/bootstrap/dist/css/bootstrap.css">
 
-
-
 		<script src="./public/app.js"></script>
 		<script src="./public/routes/home.js"></script>
 		<script src="./public/routes/contact.js"></script>
+
+		<!-- update -->
+		<script src="./public/controllers/main.js"></script>
+		<script src="./public/controllers/almacen/almacen.js"></script>
+		<script src="./public/controllers/almacen/productos.js"></script>
+		<script src="./public/controllers/almacen/pedidos.js"></script>
+		<!-- update -->
 
 		<script src="./public/services/persons.js"></script>
 		<script src="./public/services/product.js"></script>
 		<script src="./public/services/categoryProduct.js"></script>
 		
 		<script src="./public/controllers/person.js"></script>
-		<script src="./public/controllers/main.js"></script>
 		<script src="./public/controllers/home.js"></script>
 		<script src="./public/controllers/contact.js"></script>
 		<script src="./public/controllers/sessions.js"></script>

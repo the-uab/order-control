@@ -10,14 +10,6 @@ angular.module('seedApp')
       controller: 'MainController'
     });
 
-
-
-    $stateProvider.state('main.session', {
-      url: 'session',
-      templateUrl: path + '/session.html',
-      controller: 'SessionsController'
-    });
-
     $stateProvider.state('treasurer', {
       url: '/treasurer',
       templateUrl: path + '/treasurer.html',
@@ -29,6 +21,36 @@ angular.module('seedApp')
       templateUrl: path + '/sysadmin.html',
       controller: 'SysadminController'
     });
+
+    $stateProvider.state('almacen', {
+      url: '/almacen',
+      templateUrl: path + '/almacen/index.html',
+      controller: 'AlmacenController'
+    });
+
+    $stateProvider.state('almacen.control', {
+      url: '/control',
+      templateUrl: path + '/almacen/paginas/pedidos.html',
+      controller: 'PedidosController'
+    });
+
+    $stateProvider.state('almacen.productos', {
+      url: '/productos',
+      templateUrl: path + '/almacen/paginas/productos.html',
+      controller: 'ProductosController'
+    });
+
+    $stateProvider.state('main.session', {
+      url: 'session',
+      templateUrl: path + '/session.html',
+      controller: 'SessionsController'
+    });
+
+
+
+
+
+
 
     $stateProvider.state('sysadmin.newuser', {
       url: '/newuser',
