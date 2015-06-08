@@ -32,6 +32,7 @@
     <script src="./public/controllers/auth/authentication.js"></script>
     <script src="./public/controllers/sysadmin/sysadmin.js"></script>
     <script src="./public/controllers/public/contact.js"></script>
+    <script src="./public/controllers/tesorero/tesorero.js"></script>
     <!-- update -->
 
     <script src="./public/services/persons.js"></script>

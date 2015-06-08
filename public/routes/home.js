@@ -61,6 +61,12 @@ angular.module('seedApp')
       controller: 'ProductosController'
     });
 
+    $stateProvider.state('almacen.nuevoproducto', {
+      url: '/nuevo_productos',
+      templateUrl: path + '/almacen/productos/nuevo.html',
+      controller: 'ProductosController'
+    });
+
     // ADMINISTRADOR
     $stateProvider.state('administrador', {
       url: '/administrador',
@@ -76,6 +82,12 @@ angular.module('seedApp')
     $stateProvider.state('administrador.autorizacion', {
       url: '/productos',
       templateUrl: path + '/administrador/paginas/productos.html',
+      controller: 'ProductosController'
+    });
+
+    $stateProvider.state('administrador.administrarpedido', {
+      url: '/administrarpedido',
+      templateUrl: path + '/administrador/paginas/administrarpedido.html',
       controller: 'ProductosController'
     });
 
@@ -96,6 +108,24 @@ angular.module('seedApp')
       url: '/productos',
       templateUrl: path + '/auth/paginas/productos.html',
       controller: 'ProductosController'
+    });
+
+    $stateProvider.state('tesorero', {
+      url: '/tesorero',
+      templateUrl: path + '/tesorero/index.html',
+      controller: 'TesoreroController'
+    });
+
+    $stateProvider.state('tesorero.admin_pedido', {
+      url: '/admin_pedido',
+      templateUrl: path + '/tesorero/paginas/admin_pedido.html',
+      controller: 'TesoreroController'
+    });
+
+    $stateProvider.state('tesorero.admin_presupuesto', {
+      url: '/admin_presupuesto',
+      templateUrl: path + '/tesorero/paginas/admin_presupuesto.html',
+      controller: 'TesoreroController'
     });
 
     $urlRouterProvider.otherwise('/');
