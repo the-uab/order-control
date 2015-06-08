@@ -39,15 +39,12 @@ class categoryProductController extends REST_Controller
         $input = (array)json_decode(file_get_contents("php://input"));
         $product=$this->categoryProduct->save($input);
         $this->response($product, 200); // 200 being the HTTP response code
-
     }
     function categoryProduct_delete()
     {
-    	//$this->some_model->deletesomething( $this->get('id') );
-        /*$message = array('id' => $this->get('id'), 'message' => 'DELETED!');
-        $this->response($message, 200); // 200 being the HTTP response code
-        */
-        
+        $userId = $this->get('ID_CATEGORIA_ITEM');
+        $this->categoryProduct->delete($userId);
+        $this->response(array('param'=>$userId), 200);
     }
 	public function send_post()
 	{

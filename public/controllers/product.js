@@ -1,5 +1,4 @@
 'use strict';
-
 angular.module('seedApp')
 .controller('productController', ['$scope', 'Product', 'categoryProduct',
   function($scope, Product, categoryProduct) {
@@ -12,13 +11,14 @@ angular.module('seedApp')
       console.log(response);
       $scope.categorias = response;
     });
+
     $scope.item = {};
     
     $scope.saveProduct = function(item) {
       console.log(item);
       Product.save(item, function(response) {
-        $scope.products.push(response);
-        console.log(response);
+      $scope.products.push(response);
+      console.log(response);
       });
     }
      $scope.deleteProduct = function (product,idx) {

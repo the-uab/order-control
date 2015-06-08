@@ -70,7 +70,11 @@ angular.module('seedApp')
       templateUrl: path + '/producto.html',
       controller: 'productController'
     });
-    
+    $stateProvider.state('home.category_product', {
+      url: 'categoryProduct',
+      templateUrl: path + '/category_product.html',
+      controller: 'categoryProductController'
+    });
     $urlRouterProvider.otherwise('/');
   }
 ]);

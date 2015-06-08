@@ -12,14 +12,12 @@
 		<script src="./public/bower_components/angular-route/angular-route.js"></script>
 		<script src="./public/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 		<script src="./public/bower_components/jquery/dist/jquery.js"></script>
-
-        
-        <script src="./public/assets/js/jquery-ui-1.10.0.custom.min.js" type="text/javascript"></script>
-        
+		<script src="./public/bower_components/bootstrap/dist/js/jquery.min.js"></script>
 		<link rel="stylesheet" href="./public/assets/css/jquery-ui-1.10.0.custom.css" />
 
 		<link rel="stylesheet" href="./public/assets/css/style.css">
 		<link rel="stylesheet" href="./public/bower_components/bootstrap/dist/css/bootstrap.css">
+
 
 
 

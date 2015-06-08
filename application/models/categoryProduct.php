@@ -8,8 +8,8 @@ class CategoryProduct extends CI_Model {
   }
 
   // get categoryProducts with paging
-  function getAll(){
-    
+  function getAll()
+  {  
     return $this->db->get($this->tbl_categoryProduct);
   }
 

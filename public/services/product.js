@@ -4,7 +4,7 @@ angular.module('seedApp').factory('Product', ['$resource',
   function($resource) {
     return $resource('./api/productController/product', {
     }, {
-       save: {
+      save: {
            method: 'POST'
        },
       get: {

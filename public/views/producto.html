@@ -10,12 +10,12 @@
           </div>
           <div class="form-group">
             <label for="descripcion" class="col-sm-2 control-label">Categoria</label>
-
             <div class="col-sm-4">
-              <select ng-model="item.categoriaId">
+              <select  ng-model="item.ID_CATEGORIA_ITEM" is required>
                 <option value="{{categoria.ID_CATEGORIA_ITEM}}" ng-repeat="categoria in categorias">{{categoria.DESCRIPCION}}</option>
               </select>
             </div>
+            <button class="btn btn-danger" ui-sref="home.category_product">Registrar Categoria</button>
           </div>
            
           <div class="form-group">
@@ -32,6 +32,7 @@
           </div>
               <button type="submit" class="btn btn-primary" >Registrar Producto</button>
         </form>
+
         <div>
 </div>
         <div class="table-responsive" style="max-width: 85%;">
@@ -74,8 +75,7 @@
                   </td>
                   <td>
                    <button class="btn btn-danger" ng-click="deleteProduct(product, $index)">X</button>
-                   <button class="btn btn-success">O</button>
-                   <button class="btn btn-warning" data-toggle="modal" data-target="#modal_update">E</button>
+                   <button class="btn btn-warning" data-toggle="modal" data-target="#update_product">E</button>
                   </td>
 
                 </tr>
@@ -87,3 +87,53 @@
         <!--<a id='delete_row' class="pull-right btn btn-default">Eliminar de la lista</a>-->
       </div>
         </div>
+
+<!-- MODAL -->
+
+<div class="modal fade" id="update_product" tabindex="-1" role="dialog" aria-labelledby="myModallabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <button class="btn btn-danger close" data-dismiss="modal" aria-hidden="true">X</button>
+        <h4>Modificar</h4>
+        </div>
+        <div class="modal-body">
+                  <form class="form-horizontal" ng-submit="saveProduct(item)">
+          <div class="form-group" >
+            <label for="descripcion" class="col-sm-2 control-label">Descripción</label>
+            <div class="col-sm-4">
+              <input type="text" ng-model="item.DESCRIPCION" class="form-control"  placeholder="Nombre del Producto">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="descripcion" class="col-sm-2 control-label">Categoria</label>
+            <div class="col-sm-4">
+              <select  ng-model="item.ID_CATEGORIA_ITEM" is required>
+                <option value="{{categoria.ID_CATEGORIA_ITEM}}" ng-repeat="categoria in categorias">{{categoria.DESCRIPCION}}</option>
+              </select>
+            </div>
+            <button class="btn btn-danger" ui-sref="home.category_product">Registrar Categoria</button>
+          </div>
+           
+          <div class="form-group">
+            <label for="precio" class="col-sm-2 control-label">Precio Unitario</label>
+            <div class="col-sm-3">
+              <input type="text" ng-model="item.PRECIO" class="form-control"  placeholder="Precio por unidad">
+            </div>
+          </div>
+            <div class="form-group">
+            <label for="stock" class="col-sm-2 control-label">Stock</label>
+            <div class="col-sm-3">
+              <input type="text" ng-model="item.STOCK" class="form-control"  placeholder="Cantidad existente">
+            </div>
+          </div>
+              <button type="submit" class="btn btn-primary" >ModificarProducto</button>
+        </form>
+
+        </div>
+        <div class="modal-footer">
+        <button type="button" class=" btn btn-danger" data-dismiss="modal"> Cerrar</button>
+        </div>
+      </div>      
+    </div>
+  </div>

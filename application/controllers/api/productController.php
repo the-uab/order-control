@@ -38,29 +38,24 @@ class ProductController extends REST_Controller
     function product_post()
     {
         $input=(array)json_decode(file_get_contents("php://input"));
-        echo $input;
         $product=$this->products->save($input);
         $this->response($product, 200);
     }
-
     function product_delete()
     {
         $userId = $this->get('ID_ITEM');
         $this->products->delete($userId);
         $this->response(array('param'=>$userId), 200);
     }
-    function products_get()
-    {
-        
-    }
+ 
 
 	public function send_post()
 	{
-		//var_dump($this->request->body);
+		var_dump($this->request->body);
 	}
 
 	public function send_put()
 	{
-		//var_dump($this->put('foo'));
+		var_dump($this->put('foo'));
 	}
 }

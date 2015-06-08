@@ -1,11 +1,9 @@
 <?php
 
 class Products extends CI_Model {
-	  // table name
   private $tbl_product= 't_item';
 
   function Products(){
-    //parent::Model();
     parent::__construct();
   }
   // get products with paging
