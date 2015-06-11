@@ -58,13 +58,18 @@ angular.module('seedApp')
     $stateProvider.state('almacen.productos', {
       url: '/productos',
       templateUrl: path + '/almacen/paginas/productos.html',
-      controller: 'ProductosController'
+      controller: 'productController'
     });
 
     $stateProvider.state('almacen.nuevoproducto', {
-      url: '/nuevo_productos',
+      url: '/nuevo_producto',
       templateUrl: path + '/almacen/productos/nuevo.html',
-      controller: 'ProductosController'
+      controller: 'productController'
+    });
+    $stateProvider.state('almacen.categoriaProducto', {
+      url: '/categoriaProducto',
+      templateUrl: path + '/almacen/productos/categoriaProducto.html',
+      controller: 'productController'
     });
 
     // ADMINISTRADOR

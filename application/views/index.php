@@ -26,7 +26,7 @@
     <script src="./public/controllers/main.js"></script>
     <script src="./public/controllers/sessions.js"></script>
     <script src="./public/controllers/almacen/almacen.js"></script>
-    <script src="./public/controllers/almacen/productos.js"></script>
+    <script src="./public/controllers/almacen/product.js"></script>
     <script src="./public/controllers/almacen/pedidos.js"></script>
     <script src="./public/controllers/administrador/administrador.js"></script>
     <script src="./public/controllers/auth/authentication.js"></script>
@@ -37,7 +37,7 @@
 
     <script src="./public/services/persons.js"></script>
     <script src="./public/services/product.js"></script>
-    <script src="./public/services/categoryProduct.js"></script>
+    <script src="./public/controllers/almacen/categoryProduct.js"></script>
   </head>
 
   <body>

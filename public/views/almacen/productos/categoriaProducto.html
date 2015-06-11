@@ -1,0 +1,53 @@
+
+      <b><h3 class="center">Nueva Categoria</h3></b>
+
+        <form class="form-horizontal" ng-submit="savecategory(item)">
+          <div class="form-group" >
+            <label for="descripcion" class="col-sm-2 control-label">Descripción</label>
+            <div class="col-sm-4">
+              <input type="text" ng-model="item.DESCRIPCION" class="form-control"  placeholder="Nombre de Categoria">
+            </div>
+          </div>
+              <button type="submit" class="btn btn-primary" >Agregar Categoria</button>
+        </form>
+        <div>
+</div>
+        <div class="table-responsive" style="max-width: 85%;">
+        
+          <div class="row clearfix">
+          <div class="col-md-12 column">
+            <table class="table table-bordered table-hover" id="tab_logic">
+              <thead>
+                <tr >
+                  <th class="text-center">
+                    Nº
+                  </th>
+                  <th class="text-center">
+                    Descripción
+                  </th>
+                  <th class="text-center">
+                    Gestión
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id='addr0'ng-repeat="categoryProduct in categoryProducts">
+                  <td>
+                  {{categoryProduct.ID_CATEGORIA_ITEM}}
+                  </td>
+                  <td>
+                  {{categoryProduct.DESCRIPCION}}
+                  </td>
+                  <td>
+                   <button class="btn btn-danger" ng-click="deletecategory(categoryProduct,$index)">X</button>
+                   <button class="btn btn-warning" data-toggle="modal" data-target="#modal_update">E</button>
+                   <!-- <button class="btn btn-success" data-toggle="modal" data-target="#modal_update">a</button> -->
+                  </td>
+                </tr>
+                          <tr id='addr1'></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+        </div>
