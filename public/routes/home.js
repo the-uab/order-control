@@ -59,7 +59,7 @@ angular.module('seedApp')
       url: '/productos',
       templateUrl: path + '/almacen/paginas/productos.html',
       controller: 'productController'
-    });
+    }); 
 
     $stateProvider.state('almacen.nuevoproducto', {
       url: '/nuevo_producto',
@@ -69,7 +69,7 @@ angular.module('seedApp')
     $stateProvider.state('almacen.categoriaProducto', {
       url: '/categoriaProducto',
       templateUrl: path + '/almacen/productos/categoriaProducto.html',
-      controller: 'productController'
+      controller: 'categoryProductController'
     });
 
     // ADMINISTRADOR
