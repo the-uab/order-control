@@ -1,4 +1,53 @@
-<div>
-	<h1>Productos</h1>
-	<p>views/almacen/paginas/productos.html</p>
-</div>
+
+        <div class="table-responsive" style="max-width: 85%;">
+        
+          <div class="row clearfix">
+          <div class="col-md-12 column">
+            <table class="table table-bordered table-hover" id="tab_logic">
+              <thead>
+                <tr >
+                  <th class="text-center">
+                    Nº
+                  </th>
+                  <th class="text-center">
+                    Descripción
+                  </th>
+                  <th class="text-center">
+                    Cantidad
+                  </th>
+                  <th class="text-center">
+                    Precio unitario
+                  </th>
+                  <th class="text-center">
+                    Gestión
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id='addr0'ng-repeat="product in products">
+                  <td>
+                  {{product.ID_ITEM}}
+                  </td>
+                  <td>
+                  {{product.DESCRIPCION}}
+                  </td>
+                  <td>
+                  {{product.STOCK}}
+                  </td>
+                  <td>
+                   {{product.PRECIO}}
+                  </td>
+                  <td>
+                   <button class="btn btn-danger" ng-click="deleteProduct(product, $index)">X</button>
+                   <button class="btn btn-success">O</button>
+                   <button class="btn btn-warning" data-toggle="modal" data-target="#modal_update">E</button>
+                  </td>
+                </tr>
+                <tr id='addr1'></tr>
+              </tbody>
+            </table>
+            <button class="btn btn-primary">Exportar a PDF</button>
+          </div>
+        </div>
+      </div>
+    </div>

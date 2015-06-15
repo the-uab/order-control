@@ -20,12 +20,12 @@ class CategoryProduct extends CI_Model {
   }
   // update categoryProduct by id
   function update($id, $categoryProduct){
-    $this->db->where('id', $id);
+    $this->db->where('ID_CATEGORIA_ITEM', $id);
     $this->db->update($this->tbl_categoryProduct, $categoryProduct);
   }
   // delete categoryProduct by id
   function delete($id){
-    $this->db->where('id', $id);
+    $this->db->where('ID_CATEGORIA_ITEM', $id);
     $this->db->delete($this->tbl_categoryProduct);
   }
   function get_by_id($id){

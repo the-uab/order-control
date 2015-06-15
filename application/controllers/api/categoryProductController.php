@@ -46,25 +46,26 @@ class categoryProductController extends REST_Controller
     }
     function categoryProduct_post()
     {
-        //$this->some_model->updatecategoryProduct( $this->get('id') );
-        $message = array('id' => $this->get('id'), 'name' => $this->post('name'), 'email' => $this->post('email'), 'message' => 'ADDED!');
-
-        $this->response($message, 200); // 200 being the HTTP response code
+        $input = (array)json_decode(file_get_contents("php://input"));
+        $product=$this->categoryProduct->save($input);
+        $this->response($product, 200); // 200 being the HTTP response code
     }
     function categoryProduct_delete()
+    { 
+        $id_categoria = $this->get('ID_CATEGORIA_ITEM');
+        $this->categoryProduct->delete($id_categoria);
+        $this->response(array('param'=>$id_categoria), 200);
+    }
+    function categoryProduct_update()
     {
-    	//$this->some_model->deletesomething( $this->get('id') );
-        /*$message = array('id' => $this->get('id'), 'message' => 'DELETED!');
-
-        $this->response($message, 200); // 200 being the HTTP response code
-        */
+        $this->response($categoryProduct,200);
     }
 	public function send_post()
 	{
-		//var_dump($this->request->body);
+		var_dump($this->request->body);
 	}
-	public function send_put()
+	public function categoryProduct_put()
 	{
-		//var_dump($this->put('foo'));
+		var_dump($this->put('foo'));
 	}
 }
