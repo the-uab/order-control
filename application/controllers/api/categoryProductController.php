@@ -46,9 +46,20 @@ class categoryProductController extends REST_Controller
     }
     function categoryProduct_post()
     {
+
         $input = (array)json_decode(file_get_contents("php://input"));
-        $product=$this->categoryProduct->save($input);
-        $this->response($product, 200); // 200 being the HTTP response code
+        $id_categoria=$input['ID_CATEGORIA_ITEM'];
+        if($id_categoria>0){
+            
+            $descripcion = $input['DESCRIPCION'];
+            $this->categoryProduct->update($id_categoria,$descripcion);
+            $this->response($id_categoria, 200);
+
+        }else{
+            $product=$this->categoryProduct->save($input);
+            $this->response($input, 200); // 200 being the HTTP response code
+        }
+
     }
     function categoryProduct_delete()
     { 
@@ -58,14 +69,18 @@ class categoryProductController extends REST_Controller
     }
     function categoryProduct_update()
     {
-        $this->response($categoryProduct,200);
+        
+        $id_categoria = $this->get('ID_CATEGORIA_ITEM');
+        $descripcion = $this->get('DESCRIPCION');
+        $input = (array)json_decode(file_get_contents("php://input"));
+        
+        $this->categoryProduct->update($id_categoria,$descripcion);
+        $this->response($id_categoria, 200);
+        
     }
 	public function send_post()
 	{
 		var_dump($this->request->body);
 	}
-	public function categoryProduct_put()
-	{
-		var_dump($this->put('foo'));
-	}
+	
 }

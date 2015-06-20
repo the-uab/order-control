@@ -21,5 +21,12 @@ angular.module('seedApp')
         $scope.categoryProducts.splice(idx, 1);
         });
     }
+    $scope.btnEditarClick = function (item) {
+        console.log(categoryProduct);
+        
+    }
+
+
+
   }
 ]);

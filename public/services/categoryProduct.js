@@ -12,7 +12,7 @@ angular.module('seedApp').factory('categoryProduct', ['$resource',
         isArray: true
       },
       update: {
-        method: 'PUT'
+        method: 'POST'
       },
        delete: {
         url: './api/categoryProductController/categoryProduct/ID_CATEGORIA_ITEM/:ID_CATEGORIA_ITEM',

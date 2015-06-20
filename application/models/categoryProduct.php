@@ -19,9 +19,14 @@ class CategoryProduct extends CI_Model {
     return (array)$this->get_by_id($this->db->insert_id())->row();
   }
   // update categoryProduct by id
-  function update($id, $categoryProduct){
+  function update($id, $descripcion){
+    $data = array(
+               'DESCRIPCION' => $descripcion
+               //'name' => $name,
+               //'date' => $date
+            );
     $this->db->where('ID_CATEGORIA_ITEM', $id);
-    $this->db->update($this->tbl_categoryProduct, $categoryProduct);
+    $this->db->update($this->tbl_categoryProduct, $data);
   }
   // delete categoryProduct by id
   function delete($id){
