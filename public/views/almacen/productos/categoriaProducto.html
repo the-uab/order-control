@@ -1,4 +1,5 @@
-
+  <div class="jumbotron">
+  <div>
       <b><h3 class="center">Nueva Categoria</h3></b>
 
         <form class="form-horizontal" ng-submit="savecategory(item)">
@@ -10,8 +11,8 @@
           </div>
               <button type="submit" class="btn btn-primary" >Agregar Categoria</button>
         </form>
-        <div>
-</div>
+      <br />  
+  </div>
         <div class="table-responsive" style="max-width: 85%;">
         
           <div class="row clearfix">
@@ -40,7 +41,7 @@
                   </td>
                   <td>
                    <button class="btn btn-danger" ng-click="deletecategory(categoryProduct,$index)">X</button>
-                   <button class="btn btn-warning" ng-click="btnEditarClick(categoryProduct,$index)" data-toggle="modal" data-target="#modal_update">E</button>
+                   <button class="btn btn-warning" ng-click="btnEditarClick(categoryProduct)">E</button>
                    <!-- <button class="btn btn-success" data-toggle="modal" data-target="#modal_update">a</button> -->
                   </td>
                 </tr>
@@ -51,7 +52,7 @@
         </div>
       </div>
   </div>
-
+</div>
 
 
 

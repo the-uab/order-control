@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="./public/assets/css/style.css">
     <link rel="stylesheet" href="./public/bower_components/bootstrap/dist/css/bootstrap.css">
-
+    
     <script src="./public/app.js"></script>
     <script src="./public/routes/home.js"></script>
     <script src="./public/routes/contact.js"></script>

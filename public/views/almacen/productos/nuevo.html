@@ -1,4 +1,4 @@
-
+<div class="jumbotron">
       <b><h3 class="center">Nuevo Producto</h3></b>
 
         <form class="form-horizontal" ng-submit="saveProduct(item)">
@@ -41,7 +41,7 @@
         
           <div class="row clearfix">
           <div class="col-md-12 column">
-            <table class="table table-bordered table-hover" id="tab_logic">
+            <table class="table table-bordered table-hover" id="tab_logic" ng-table="tblProductos">
               <thead>
                 <tr >
                   <th class="text-center">
@@ -90,3 +90,4 @@
         <!--<a id='delete_row' class="pull-right btn btn-default">Eliminar de la lista</a>-->
       </div>
         </div>
+</div>
