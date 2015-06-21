@@ -76,6 +76,11 @@ angular.module('seedApp')
       templateUrl: path + '/almacen/productos/editCategoria.html',
       controller: 'categoryProductController'
     });
+    $stateProvider.state('almacen.editProducto', {
+      url: '/editProducto/:idProducto',
+      templateUrl: path + '/almacen/productos/editProducto.html',
+      controller: 'productController'
+    });
 
     // ADMINISTRADOR
     $stateProvider.state('administrador', {

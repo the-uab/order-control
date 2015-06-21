@@ -52,8 +52,22 @@ class ProductController extends REST_Controller
     function product_post()
     {
         $input=(array)json_decode(file_get_contents("php://input"));
-        $product=$this->products->save($input);
-        $this->response($product, 200);
+        $id_producto=$input['ID_ITEM'];
+        $descripcion = $input['DESCRIPCION'];
+            $id_categoria = $input['ID_CATEGORIA_ITEM'];
+            $precio = $input['PRECIO'];
+            $fecha = $input['FECHA_COMPRA'];
+            $stock = $input['STOCK'];
+        if($id_producto>0){
+            
+
+            $this->products->update($id_producto,$descripcion,$id_categoria,$precio,$fecha,$stock);
+            $this->response($id_producto, 200);
+
+        }else{
+            $product=$this->products->save($descripcion,$id_categoria,$precio,$fecha,$stock);
+            $this->response($product, 200);
+        }
     }
 
     function product_delete()

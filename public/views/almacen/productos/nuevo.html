@@ -64,7 +64,7 @@
               <tbody>
                 <tr id='addr0'ng-repeat="product in products">
                   <td>
-                  {{product.ID_ITEM}}
+                  {{$index+1}}
                   </td>
                   <td>
                   {{product.DESCRIPCION}}
@@ -77,8 +77,8 @@
                   </td>
                   <td>
                    <button class="btn btn-danger" ng-click="deleteProduct(product, $index)">X</button>
-                   <button class="btn btn-success">O</button>
-                   <button class="btn btn-warning" data-toggle="modal" data-target="#modal_update">E</button>
+                   
+                   <button class="btn btn-warning" ng-click="btnEditarClick(product)" >E</button>
                   </td>
 
                 </tr>

@@ -1,7 +1,7 @@
 'use strict';
 angular.module('seedApp')
-.controller('productController', ['$scope', 'Product', 'categoryProduct',
-  function($scope, Product, categoryProduct) {
+.controller('productController', ['$scope', 'Product', 'categoryProduct','$location','$window','$routeParams','$stateParams', '$state',
+  function($scope, Product, categoryProduct,$location,$window,$routeParams,$stateParams, $state) {
     $scope.products = [];
     Product.get({}, function(response) {
       console.log(response);
@@ -28,6 +28,31 @@ angular.module('seedApp')
         $scope.products.splice(idx, 1);
         });
     }
-
+     $scope.cancel = function () {
+            var url='#/almacen/nuevo_producto';
+            //categoryProduct.save($scope.item);
+           // $location.path('/categoriaProducto');
+            $window.location.href=url;
+    }
+    $scope.btnEditarClick = function (item) {
+        var url='#/almacen/editProducto/';
+            console.log(item);
+        $window.location.href = url+item.ID_ITEM;
+        
+    }
+    $scope.updateProduct = function (item) {
+          var url='#/almacen/nuevo_producto';
+          var idProducto=$stateParams.idProducto; 
+            if (idProducto>0) {
+              item.ID_ITEM=idProducto;
+              Product.save(item);
+              console.log(item);
+            } 
+            Product.get({}, function(response) {
+              $scope.products = response;
+            });
+           // $location.path('/categoriaProducto');
+          $window.location.href=url;
+    }
   }
 ]);

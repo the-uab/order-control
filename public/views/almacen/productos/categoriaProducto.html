@@ -34,17 +34,19 @@
               <tbody>
                 <tr id='addr0'ng-repeat="categoryProduct in categoryProducts">
                   <td>
-                  {{categoryProduct.ID_CATEGORIA_ITEM}}
+                  {{$index+1}}
                   </td>
                   <td>
                   {{categoryProduct.DESCRIPCION}}
                   </td>
                   <td>
-                   <button class="btn btn-danger" ng-click="deletecategory(categoryProduct,$index)">X</button>
-                   <button class="btn btn-warning" ng-click="btnEditarClick(categoryProduct)">E</button>
+                   <button class="btn btn-danger " ng-click="deletecategory(categoryProduct,$index)">
+                   <span class="glyphicon glyphicon-remove"></span> Eliminar</button>
+                   <button class="btn btn-warning" ng-click="btnEditarClick(categoryProduct)">
+                   <span class="glyphicon glyphicon-edit"></span> Editar</button>
                    <!-- <button class="btn btn-success" data-toggle="modal" data-target="#modal_update">a</button> -->
                   </td>
-                </tr>
+                </tr> 
                           <tr id='addr1'></tr>
               </tbody>
             </table>
