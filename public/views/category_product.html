@@ -2,7 +2,7 @@
       <b><h3 class="center">Nueva Categoria</h3></b>
 
         <form class="form-horizontal" ng-submit="savecategory(item)">
-            <div class="form-group" >
+          <div class="form-group" >
             <label for="descripcion" class="col-sm-2 control-label">Descripción</label>
             <div class="col-sm-4">
               <input type="text" ng-model="item.DESCRIPCION" class="form-control"  placeholder="Nombre de Categoria">
@@ -40,7 +40,7 @@
                   </td>
                   <td>
                    <button class="btn btn-danger" ng-click="deletecategory(categoryProduct,$index)">X</button>
-                   <button class="btn btn-warning" ng-click="updateProduct(categoryProduct)">E</button>
+                   <button class="btn btn-warning" data-toggle="modal" data-target="#modal_update">E</button>
                    <!-- <button class="btn btn-success" data-toggle="modal" data-target="#modal_update">a</button> -->
                   </td>
                 </tr>
@@ -51,28 +51,3 @@
         </div>
       </div>
         </div>
-
-
-
-<div>
-    <script type="text/ng-template" id="categoryModal">
-
-        <div class="modal-header">
-            <h3 class="modal-title">MODIFICAR CATEGORIA</h3>
-        </div>
-        <div class="modal-body">
-          <form ng-submit="savePerson(item)">
-            <!-- nombre -->
-            <div class="form-group">
-              <label for="exampleInputEmail1">Descripcion</label>
-               <input type="text" ng-model="categoryProduct.DESCRIPCION" class="form-control"  placeholder="Nombre del Producto">
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="save()">GUARDAR</button>
-            <button class="btn btn-warning" ng-click="cancel()">CANCELAR</button>
-        </div>
-    </script>
-    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
-</div>

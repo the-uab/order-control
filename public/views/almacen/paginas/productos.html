@@ -38,15 +38,14 @@
                    {{product.PRECIO}}
                   </td>
                   <td>
-                   <button class="btn btn-danger" ng-click="deleteProduct(product, $index)">X</button>
-                   <button class="btn btn-success">O</button>
-                   <button class="btn btn-warning" data-toggle="modal" data-target="#modal_update">E</button>
+                   <button class="btn btn-danger"  ng-click="deleteProduct(product, $index)">X</button>
+                   <button class="btn btn-primary" ng-click="pdfMaker(product)">PDF</button>
                   </td>
                 </tr>
                 <tr id='addr1'></tr>
               </tbody>
             </table>
-            <button class="btn btn-primary">Exportar a PDF</button>
+             <button class="btn btn-primary" ng-click="pdfall()">Exportar a PDF</button>
           </div>
         </div>
       </div>

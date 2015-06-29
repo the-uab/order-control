@@ -60,12 +60,20 @@ class categoryProductController extends REST_Controller
     {
         $this->response($categoryProduct,200);
     }
+    function categoryProduct_put()
+    {
+        try {
+           $id_categoria=$this->get('ID_CATEGORIA_ITEM');
+           $input_values = $this->put();
+           $item = $this->categoryProduct->update($ID_CATEGORIA_ITEM, $input_values);
+           $this->response($item, 200);
+        } catch (Exception $e) {
+          // $this->response(array("error" => $e->getMessage()), 404);
+        }
+    }
 	public function send_post()
 	{
 		var_dump($this->request->body);
 	}
-	public function categoryProduct_put()
-	{
-		var_dump($this->put('foo'));
-	}
+	
 }

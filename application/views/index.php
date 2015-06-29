@@ -12,11 +12,18 @@
     <script src="./public/bower_components/angular-route/angular-route.js"></script>
     <script src="./public/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="./public/bower_components/jquery/dist/jquery.js"></script>
-
+<!-- modal -->
+    <script src="./public/bower_components/jquery/dist/bootstrap.min.js"></script>
+    <script src="./public/bower_components/jquery/dist/jquery.min.map"></script>
+    <script src="./public/bower_components/jquery/dist/jquery.min.js"></script>
+    
     <script src="./public/assets/js/demo.js" type="text/javascript"></script> 
-
+    
     <link rel="stylesheet" href="./public/assets/css/style.css">
     <link rel="stylesheet" href="./public/bower_components/bootstrap/dist/css/bootstrap.css">
+
+    <script src="./public/bower_components/pdf/pdfmake.min.js"></script>
+    <script src="./public/bower_components/pdf/vfs_fonts.js"></script>
 
     <script src="./public/app.js"></script>
     <script src="./public/routes/home.js"></script>
@@ -33,17 +40,18 @@
     <script src="./public/controllers/sysadmin/sysadmin.js"></script>
     <script src="./public/controllers/public/contact.js"></script>
     <script src="./public/controllers/tesorero/tesorero.js"></script>
+
     <!-- update -->
 
     <script src="./public/services/persons.js"></script>
 
     <script src="./public/services/product.js"></script>
     <script src="./public/services/categoryProduct.js"></script>
-    
+    <script src="./public/controllers/almacen/update-product.js"></script>
     <script src="./public/controllers/almacen/product.js"></script>
     <script src="./public/controllers/almacen/categoryProduct.js"></script>
   </head>
-
+<link rel="shortcut icon" href="./public/assets/img/img_persona_default.jpg">
   <body>
 
     <div ng-app="seedApp">

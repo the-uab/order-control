@@ -45,10 +45,18 @@ class ProductController extends REST_Controller
             $this->response(array('error' => 'no se encontro el producto'), 404);
         }
     }
-    function produt_put()
-    {
-     $this->response("no hay nada",200);
+
+    function product_put()
+  {
+    try {
+       $ID_ITEM=$this->get('ID_ITEM');
+       $input_values = $this->put();
+       $item = $this->products->update($ID_ITEM, $input_values);
+       $this->response($item, 200);
+    } catch (Exception $e) {
+      // $this->response(array("error" => $e->getMessage()), 404);
     }
+  }
     function product_post()
     {
         $input=(array)json_decode(file_get_contents("php://input"));
@@ -62,13 +70,10 @@ class ProductController extends REST_Controller
         $this->products->delete($userId);
         $this->response(array('param'=>$userId), 200);
     }
-	public function send_post()
+	function send_post()
 	{
 	var_dump($this->request->body);
 	}
 
-	public function send_put()
-	{
-	var_dump($this->put('ID_ITEM'));
-	}
+	
 }

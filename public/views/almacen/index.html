@@ -1,29 +1,41 @@
-<div class="container">
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+<link rel="stylesheet" href="./public/assets/css/customStyleAlmacen.css">
+  <div class="navbar-wrapper">
     <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" ui-sref="almacen">O-C Almacen</a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          
-          <li><a ui-sref="almacen.productos">Productos</a></li>
-          <li><a ui-sref="almacen.nuevoproducto">Nuevo productos</a></li>
-          <li><a ui-sref="almacen.categoriaProducto">Categorias</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a>Almacen</a></li>
-          <li><a ui-sref="main">Cerrar session</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div ui-view>
-      <div class="jumbotron">
-        <h4>Bienvenidos a la pagina de</p>
-        <h2>Almacen</h2>
-      </div>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+
+                    
+              <a class="navbar-brand" ui-sref="almacen">O-C Almacen</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                
+                <li><a ui-sref="almacen.nuevoproducto">Nuevo producto</a></li>
+                <li><a ui-sref="almacen.categoriaProducto">Categorias</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a ui-sref="almacen.productos">Productos</a></li>
+                <li><a ui-sref="main">Cerrar session</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container">
+          <div class="jumbotron">
+            <div ui-view>
+              <h4>Bienvenidos a la pagina de</p>
+              <h2>Almacen</h2>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
+</div>
 </div>
