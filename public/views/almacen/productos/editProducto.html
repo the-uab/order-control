@@ -1,0 +1,46 @@
+<div class="jumbotron">
+      <b><h3 class="center">EditarProducto</h3></b>
+
+        <form class="form-horizontal" >
+          <div class="form-group" >
+            <label for="descripcion" class="col-sm-2 control-label">Descripción</label>
+            <div class="col-sm-4">
+              <input type="text" ng-model="item.DESCRIPCION" class="form-control"  placeholder="Nombre del Producto">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="descripcion" class="col-sm-2 control-label">Categoria</label>
+
+            <div class="col-sm-4">
+              <select ng-model="item.ID_CATEGORIA_ITEM" required>
+                <option value="">Seleccione categoria</option>
+                <option value="{{categoria.ID_CATEGORIA_ITEM}}" ng-repeat="categoria in categorias">{{categoria.DESCRIPCION}}</option>
+              </select>
+            </div>
+          </div>
+           
+          <div class="form-group">
+            <label for="precio" class="col-sm-2 control-label">Precio Unitario</label>
+            <div class="col-sm-3">
+              <input type="number" min="0" value="0" step="0.1" ng-model="item.PRECIO" class="form-control"  placeholder="Precio por unidad">
+            </div>
+          </div>
+            <div class="form-group">
+            <label for="stock" class="col-sm-2 control-label">Stock</label>
+            <div class="col-sm-3">
+              <input type="number" min="0" value="0" step="1" ng-model="item.STOCK" class="form-control"  placeholder="Cantidad existente">
+            </div>
+          </div>
+          <div class="row">
+            <div style="display: block;text-align: center;background-color: transparent" >
+                <a ng-click="updateProduct(item)" class="btn btn-small btn-success">
+                <span class="glyphicon glyphicon-ok"></span> Actualizar</a>
+                <a ng-click="cancel()" class="btn btn-small btn-danger">
+                <span class="glyphicon glyphicon-remove"> Cancelar</a>
+                
+            </div>
+          
+          </div>
+              
+        </form>
+</div>
