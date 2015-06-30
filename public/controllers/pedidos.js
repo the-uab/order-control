@@ -9,9 +9,12 @@ angular.module('seedApp')
     $scope.guardarPedidos = function(item) {
       console.log(item);
       var newItem = {
-        detalle: item.detalle, 
+        codigo: item.codigo, 
+        producto: item.producto,
         cantidad: item.cantidad,
-        precio: item.precio,
+        descripcion: item.descripcion,
+        costototal: item.costototal,
+        costounitario: item.costounitario,
       };
       $scope.pedidos.push(newItem);
     }
