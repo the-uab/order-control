@@ -20,69 +20,51 @@ class ProductController extends REST_Controller
 {
 	function __construct()
     {
-        // Construct our parent class
         parent::__construct();
         $this->load->model('products','',TRUE);
-       // $this->load->model('categoryProduct','',TRUE);
-        // Configure limits on our controller methods. Ensure
-        // you have created the 'limits' table and enabled 'limits'
-        // within application/config/rest.php
-        /*$this->methods['product_get']['limit'] = 500; //500 requests per hour per product/key
-        $this->methods['product_post']['limit'] = 100; //100 requests per hour per product/key
-        $this->methods['product_delete']['limit'] = 50; //50 requests per hour per product/key
-        */
     }
-
     function product_get()
     {
-        $product = $this->products->get_with_category()->result();
-        if($product)
-        {
-            $this->response($product, 200);
+        $products = $this->products->get_with_category()->result();
+        if($products){
+            $this->response($products, 200);
         }
-        else
-        {
-            $this->response(array('error' => 'no se encontro el producto'), 404);
+        else{
+            $this->response(array('error' => 'producto no encontrado'), 404);
         }
     }
-    function produt_put()
-    {
-     $this->response("no hay nada",200);
+
+    function product_put()
+  {
+    try {
+       $ID_ITEM=$this->get('ID_ITEM');
+       $input_values = $this->put();
+       $item = $this->products->update($ID_ITEM, $input_values);
+       $this->response($item, 200);
+    } catch (Exception $e) {
+      // $this->response(array("error" => $e->getMessage()), 404);
     }
+  }
     function product_post()
     {
         $input=(array)json_decode(file_get_contents("php://input"));
-        $id_producto=$input['ID_ITEM'];
-        $descripcion = $input['DESCRIPCION'];
-            $id_categoria = $input['ID_CATEGORIA_ITEM'];
-            $precio = $input['PRECIO'];
-            $fecha = $input['FECHA_COMPRA'];
-            $stock = $input['STOCK'];
-        if($id_producto>0){
-            
-
-            $this->products->update($id_producto,$descripcion,$id_categoria,$precio,$fecha,$stock);
-            $this->response($id_producto, 200);
-
-        }else{
-            $product=$this->products->save($descripcion,$id_categoria,$precio,$fecha,$stock);
-            $this->response($product, 200);
-        }
+        $product=$this->products->save($input);
+        $this->response($product, 200);
     }
-
     function product_delete()
     {
         $userId = $this->get('ID_ITEM');
         $this->products->delete($userId);
         $this->response(array('param'=>$userId), 200);
     }
+
 	public function send_post()
 	{
-	var_dump($this->request->body);
+		var_dump($this->request->body);
 	}
 
 	public function send_put()
 	{
-	var_dump($this->put('ID_ITEM'));
+		var_dump($this->put('foo'));
 	}
 }
