@@ -1,4 +1,112 @@
-<div>
-  <h1>Control de pedidos</h1>
-  <p>views/auth/paginas/pedidos.html</p>
+<div class="container">
+
+  <div class="jumbotron">
+    <div class="row" style="float:right;margin: 5px;">
+      <div >
+
+      </div>
+    </div>
+</style>
+      <b><h3 class="center">Administración de Pedidos</h3></b>
+      <hr>
+
+          <form class="form-horizontal">
+           <div class="form-group">
+            <label for="precio" class="col-sm-2 control-label">Unidad Solicitante:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="precio" placeholder="Facultad">
+            </div>
+            <hr>
+            <label for="precio" class="col-sm-2 control-label">Usuario Solicitante:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="precio" placeholder="Nombre solicitante">
+            </div>
+
+          </div>
+
+          </form>
+          <h3>Lista de Pedidos</h3>
+          <hr><hr>
+
+          <div class="table-responsive" style="max-width: 75%;">
+            <table class="table table-bordered table-hover ">
+              <thead>
+              <tr class="active">
+                <th class="col-md-2">Codigo</th>
+                <th >Producto</th>
+                <th >Cantidad</th>
+                <th >Descripcion</th>
+                <th >Costo Unitario</th>
+                <th >Costo Total</th>
+                <th class="center">Verificación</th>
+              </tr>
+              </thead>
+              <body>
+
+              <tr>
+
+                <td>
+                <div class="form-group">
+                    <div>
+                      <input type="text" class="form-control" ng-model="item.codigo" placeholder="codigo">
+
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div>
+                      <input type="text" class="form-control" ng-model="item.producto" placeholder="producto">
+                    </div>
+                  </div>
+                </td>
+                <td>
+                <div class="form-group">
+                <div>
+              <input type="text" class="form-control" ng-model="item.cantidad" placeholder="cantidad">
+            </div>
+          </div>
+                </td>
+              <td>
+                <div class="form-group">
+            <div>
+              <input type="text" class="form-control" ng-model="item.descripcion" placeholder="descripcion  ">
+            </div>
+          </div>
+                </td>
+                <td>
+                <div class="form-group">
+            <div>
+              <input type="text" class="form-control" ng-model="item.costototal" placeholder="costototal">
+            </div>
+          </div>
+                </td>
+                <td>
+                <div class="form-group">
+            <div>
+              <input type="text" class="form-control" ng-model="item.costounitario" placeholder="costounitario">
+            </div>
+          </div>
+                </td>
+                <td class="center" >
+
+                <a ng-click="guardarPedidos(item)"><span class="label label-info">guardar</span></a>
+              </tr>
+
+               <tr ng-repeat="pedido in pedidos">
+                <td>{{pedido.codigo}}</td>
+                <td>{{pedido.producto}}</td>
+                <td>{{pedido.descripcion}}</td>
+                <td>{{pedido.costounitario}}</td>
+                <td>{{pedido.costototal}}</td>
+                <td>{{pedido.verificacion}}</td>
+                <td><a ng-click="eliminarPedidos(pedido)"><span class="label label-info">eliminar</span></a></td>
+                </tr>
+
+
+            </tbody>
+          </table>
+        </div>
+  </div>
+
 </div>
