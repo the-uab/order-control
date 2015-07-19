@@ -12,7 +12,6 @@ angular.module('seedApp').factory('Product', ['$resource',
         isArray: true
       },
       update: {
-        url: './api/productController/product/ID_ITEM/:ID_ITEM',
         method: 'PUT'
       },
       delete: {

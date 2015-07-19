@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost:3000/order-control';
+$config['base_url']	= '';
 
 /*
 |--------------------------------------------------------------------------

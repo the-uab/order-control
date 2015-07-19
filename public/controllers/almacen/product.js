@@ -1,7 +1,7 @@
 'use strict';
 angular.module('seedApp')
-.controller('productController', ['$scope', 'Product', 'categoryProduct', '$modal','$log',
-  function($scope, Product, categoryProduct, $modal, $log) {
+.controller('productController', ['$scope', 'Product', 'categoryProduct','$location','$window','$routeParams','$stateParams', '$state',
+  function($scope, Product, categoryProduct,$location,$window,$routeParams,$stateParams, $state) {
     $scope.products = [];
     Product.get({}, function(response) {
       console.log(response);
@@ -28,78 +28,31 @@ angular.module('seedApp')
         $scope.products.splice(idx, 1);
         });
     }
-    $scope.pdfMaker = function(product){
-      var str = "" + product.ID_ITEM;
-      str += product.ID_ITEM;
-      str += product.ID_CATEGORIA_ITEM;
-      str += product.DESCRIPCION;
-      str += product.STOCK;
-      str += product.PRECIO;
-        var docDefinition = { content:{
-        table: {
-        headerRows: 1,
-        widths: [ 'auto', 'auto', '*', 'auto','auto' ],
-        body: [
-          [ 'Id Producto', 'Id Categoria ', 'Descripción', 'Stock','Precio' ],
-          [ product.ID_ITEM,product.ID_CATEGORIA_ITEM,product.DESCRIPCION,product.STOCK,product.PRECIO]
-              ]
-            }
-        }           };  
-       //pdfMake.createPdf(docDefinition).download('productos.pdf');
-         pdfMake.createPdf(docDefinition).open();
+     $scope.cancel = function () {
+            var url='#/almacen/nuevo_producto';
+            //categoryProduct.save($scope.item);
+           // $location.path('/categoriaProducto');
+            $window.location.href=url;
     }
-      $scope.pdfall = function(){
-      var str = "";
-      var docDefinition="";
-      var products=$scope.products;
-
-      products.forEach(function(product){
-       str += product.ID_ITEM;
-       str += product.ID_CATEGORIA_ITEM;
-       str += product.DESCRIPCION;
-       str += product.STOCK;  
-       str += product.PRECIO;  
-      
-        docDefinition = { content: 
-        {
-        table: 
-          {
-        headerRows: 1,
-        widths: [ 'auto', 'auto', '*', 'auto','auto' ],
-        body: [
-          [ 'Id Producto', 'Id Categoria ', 'Descripción', 'Stock','Precio' ],
-          [ product.ID_ITEM,product.ID_CATEGORIA_ITEM,product.DESCRIPCION,product.STOCK,product.PRECIO]
-              ]
-          }
-        }          
-  };  
-  })//fin foreach    
-       // pdfMake.createPdf(docDefinition).download('productos.pdf');
-        pdfMake.createPdf(docDefinition).open();
-}
-    $scope.updateProduct = function(product) {
-      console.log(product);
-      var modalInstance = $modal.open({
-        animation: $scope.animationsEnabled,
-        templateUrl: 'myModalContent.html',
-        controller: 'ModalInstanceCtrl',
-        size: 'ln',
-        resolve: {
-          product: function() {
-            return product;
-          }
-        }
-      });
-
-      modalInstance.result.then(function(selectedItem) {
-        $scope.selected = selectedItem;
-      }, function() {
-        $log.info('Modal dismissed at: ' + new Date());
-      });
+    $scope.btnEditarClick = function (item) {
+        var url='#/almacen/editProducto/';
+            console.log(item);
+        $window.location.href = url+item.ID_ITEM;
+        
+    }
+    $scope.updateProduct = function (item) {
+          var url='#/almacen/nuevo_producto';
+          var idProducto=$stateParams.idProducto; 
+            if (idProducto>0) {
+              item.ID_ITEM=idProducto;
+              Product.save(item);
+              console.log(item);
+            } 
+            Product.get({}, function(response) {
+              $scope.products = response;
+            });
+           // $location.path('/categoriaProducto');
+          $window.location.href=url;
     }
   }
 ]);
-
-
-
-

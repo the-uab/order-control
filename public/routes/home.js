@@ -71,6 +71,54 @@ angular.module('seedApp')
       templateUrl: path + '/almacen/productos/categoriaProducto.html',
       controller: 'categoryProductController'
     });
+    $stateProvider.state('almacen.editCategoria', {
+      url: '/editCategoria/:idCategoria',
+      templateUrl: path + '/almacen/productos/editCategoria.html',
+      controller: 'categoryProductController'
+    });
+    $stateProvider.state('almacen.editProducto', {
+      url: '/editProducto/:idProducto',
+      templateUrl: path + '/almacen/productos/editProducto.html',
+      controller: 'productController'
+    });
+
+    //Tesorero -->Treasure
+    $stateProvider.state('treasure', {
+      url: '/',
+      templateUrl: path + '/treasure.html',
+      controller: 'TreasureController'
+    });
+
+    $stateProvider.state('treasure.admin_pedido',{
+      url:'admin_pedido',
+      templateUrl: path+'/admin_pedido.html',
+      controller:'TreasureController'});
+
+    $stateProvider.state('treasure.admin_presupuesto',{
+      url:'admin_presupuesto',
+      templateUrl: path+'/admin_presupuesto.html',
+      controller:'TreasureController'});
+
+    $stateProvider.state('home.pedidos', {
+      url: 'pedidos',
+      templateUrl: path + '/pedidos.html',
+      controller: 'PedidosController'
+    });
+    $stateProvider.state('home.nuevoPedido', {
+      url: 'nuevoPedido',
+      templateUrl: path + '/nuevoPedido.html',
+      controller: 'HomeController'
+    });
+    $stateProvider.state('home.pedidosSolicitados', {
+      url: 'pedidosSolicitados',
+      templateUrl: path + '/pedidosSolicitados.html',
+      controller: 'HomeController'
+    });
+    $stateProvider.state('home.producto', {
+      url: 'product',
+      templateUrl: path + '/producto.html',
+      controller: 'productController'
+    });
 
     // ADMINISTRADOR
     $stateProvider.state('administrador', {
@@ -131,24 +179,6 @@ angular.module('seedApp')
       url: '/admin_presupuesto',
       templateUrl: path + '/tesorero/paginas/admin_presupuesto.html',
       controller: 'TesoreroController'
-    });
-
-    $stateProvider.state('home.category_product', {
-      url: 'categoryProduct',
-      templateUrl: path + '/category_product.html',
-      controller: 'categoryProductController'
-    });
-
-  $stateProvider.state('home.vidal', {
-      url: 'vidal',
-      templateUrl: path + '/vidal.html',
-      controller: 'HomeController'
-    });
-
-   $stateProvider.state('home.vidal2', {
-      url: 'vidal2',
-      templateUrl: path + '/vidal2.html',
-      controller: 'HomeController'
     });
 
     $urlRouterProvider.otherwise('/');

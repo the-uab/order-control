@@ -1,4 +1,5 @@
-
+  <div class="jumbotron">
+  <div>
       <b><h3 class="center">Nueva Categoria</h3></b>
 
         <form class="form-horizontal" ng-submit="savecategory(item)">
@@ -10,8 +11,8 @@
           </div>
               <button type="submit" class="btn btn-primary" >Agregar Categoria</button>
         </form>
-        <div>
-</div>
+      <br />  
+  </div>
         <div class="table-responsive" style="max-width: 85%;">
         
           <div class="row clearfix">
@@ -33,46 +34,29 @@
               <tbody>
                 <tr id='addr0'ng-repeat="categoryProduct in categoryProducts">
                   <td>
-                  {{categoryProduct.ID_CATEGORIA_ITEM}}
+                  {{$index+1}}
                   </td>
                   <td>
                   {{categoryProduct.DESCRIPCION}}
                   </td>
                   <td>
-                   <button class="btn btn-danger" ng-click="deletecategory(categoryProduct,$index)">X</button>
-                   <button class="btn btn-warning" ng-click="updateProduct(categoryProduct)">E</button>
+                   <button class="btn btn-danger " ng-click="deletecategory(categoryProduct,$index)">
+                   <span class="glyphicon glyphicon-remove"></span> Eliminar</button>
+                   <button class="btn btn-warning" ng-click="btnEditarClick(categoryProduct)">
+                   <span class="glyphicon glyphicon-edit"></span> Editar</button>
                    <!-- <button class="btn btn-success" data-toggle="modal" data-target="#modal_update">a</button> -->
                   </td>
-                </tr>
+                </tr> 
                           <tr id='addr1'></tr>
               </tbody>
             </table>
           </div>
         </div>
       </div>
-        </div>
-
-
-
-<div>
-    <script type="text/ng-template" id="categoryModal">
-
-        <div class="modal-header">
-            <h3 class="modal-title">MODIFICAR CATEGORIA</h3>
-        </div>
-        <div class="modal-body">
-          <form ng-submit="savePerson(item)">
-            <!-- nombre -->
-            <div class="form-group">
-              <label for="exampleInputEmail1">Descripcion</label>
-               <input type="text" ng-model="categoryProduct.DESCRIPCION" class="form-control"  placeholder="Nombre del Producto">
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="save()">GUARDAR</button>
-            <button class="btn btn-warning" ng-click="cancel()">CANCELAR</button>
-        </div>
-    </script>
-    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+  </div>
 </div>
+
+
+
+
+

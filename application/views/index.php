@@ -37,6 +37,7 @@
     <script src="./public/controllers/almacen/pedidos.js"></script>
     <script src="./public/controllers/administrador/administrador.js"></script>
     <script src="./public/controllers/auth/authentication.js"></script>
+    <script src="./public/controllers/auth/pedidos.js"></script>
     <script src="./public/controllers/sysadmin/sysadmin.js"></script>
     <script src="./public/controllers/public/contact.js"></script>
     <script src="./public/controllers/tesorero/tesorero.js"></script>
@@ -44,9 +45,11 @@
     <!-- update -->
 
     <script src="./public/services/persons.js"></script>
-
     <script src="./public/services/product.js"></script>
     <script src="./public/services/categoryProduct.js"></script>
+
+	</head>
+
     <script src="./public/controllers/almacen/update-product.js"></script>
     <script src="./public/controllers/almacen/product.js"></script>
     <script src="./public/controllers/almacen/categoryProduct.js"></script>
