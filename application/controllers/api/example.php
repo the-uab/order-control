@@ -70,7 +70,6 @@ class Example extends REST_Controller
     {
     	//$this->some_model->deletesomething( $this->get('id') );
         $message = array('id' => $this->get('id'), 'message' => 'DELETED!');
-
         $this->response($message, 200); // 200 being the HTTP response code
     }
 

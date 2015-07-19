@@ -16,9 +16,9 @@
     <script src="./public/bower_components/jquery/dist/bootstrap.min.js"></script>
     <script src="./public/bower_components/jquery/dist/jquery.min.map"></script>
     <script src="./public/bower_components/jquery/dist/jquery.min.js"></script>
-    
-    <script src="./public/assets/js/demo.js" type="text/javascript"></script> 
-    
+
+    <script src="./public/assets/js/demo.js" type="text/javascript"></script>
+
     <link rel="stylesheet" href="./public/assets/css/style.css">
     <link rel="stylesheet" href="./public/bower_components/bootstrap/dist/css/bootstrap.css">
 
@@ -33,7 +33,7 @@
     <script src="./public/controllers/main.js"></script>
     <script src="./public/controllers/sessions.js"></script>
     <script src="./public/controllers/almacen/almacen.js"></script>
-    
+
     <script src="./public/controllers/almacen/pedidos.js"></script>
     <script src="./public/controllers/administrador/administrador.js"></script>
     <script src="./public/controllers/auth/authentication.js"></script>

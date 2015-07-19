@@ -59,7 +59,7 @@ angular.module('seedApp')
       url: '/productos',
       templateUrl: path + '/almacen/paginas/productos.html',
       controller: 'productController'
-    }); 
+    });
 
     $stateProvider.state('almacen.nuevoproducto', {
       url: '/nuevo_producto',
@@ -131,6 +131,24 @@ angular.module('seedApp')
       url: '/admin_presupuesto',
       templateUrl: path + '/tesorero/paginas/admin_presupuesto.html',
       controller: 'TesoreroController'
+    });
+
+    $stateProvider.state('home.category_product', {
+      url: 'categoryProduct',
+      templateUrl: path + '/category_product.html',
+      controller: 'categoryProductController'
+    });
+
+  $stateProvider.state('home.vidal', {
+      url: 'vidal',
+      templateUrl: path + '/vidal.html',
+      controller: 'HomeController'
+    });
+
+   $stateProvider.state('home.vidal2', {
+      url: 'vidal2',
+      templateUrl: path + '/vidal2.html',
+      controller: 'HomeController'
     });
 
     $urlRouterProvider.otherwise('/');

@@ -20,29 +20,17 @@ class ProductController extends REST_Controller
 {
 	function __construct()
     {
-        // Construct our parent class
         parent::__construct();
         $this->load->model('products','',TRUE);
-       // $this->load->model('categoryProduct','',TRUE);
-        // Configure limits on our controller methods. Ensure
-        // you have created the 'limits' table and enabled 'limits'
-        // within application/config/rest.php
-        /*$this->methods['product_get']['limit'] = 500; //500 requests per hour per product/key
-        $this->methods['product_post']['limit'] = 100; //100 requests per hour per product/key
-        $this->methods['product_delete']['limit'] = 50; //50 requests per hour per product/key
-        */
     }
-
     function product_get()
     {
-        $product = $this->products->get_with_category()->result();
-        if($product)
-        {
-            $this->response($product, 200);
+        $products = $this->products->get_with_category()->result();
+        if($products){
+            $this->response($products, 200);
         }
-        else
-        {
-            $this->response(array('error' => 'no se encontro el producto'), 404);
+        else{
+            $this->response(array('error' => 'producto no encontrado'), 404);
         }
     }
 
@@ -63,17 +51,20 @@ class ProductController extends REST_Controller
         $product=$this->products->save($input);
         $this->response($product, 200);
     }
-
     function product_delete()
     {
         $userId = $this->get('ID_ITEM');
         $this->products->delete($userId);
         $this->response(array('param'=>$userId), 200);
     }
-	function send_post()
+
+	public function send_post()
 	{
-	var_dump($this->request->body);
+		var_dump($this->request->body);
 	}
 
-	
+	public function send_put()
+	{
+		var_dump($this->put('foo'));
+	}
 }

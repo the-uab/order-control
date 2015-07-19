@@ -23,25 +23,15 @@ class categoryProductController extends REST_Controller
         // Construct our parent class
         parent::__construct();
         $this->load->model('categoryProduct','',TRUE);
-        // Configure limits on our controller methods. Ensure
-        // you have created the 'limits' table and enabled 'limits'
-        // within application/config/rest.php
-        /*$this->methods['categoryProduct_get']['limit'] = 500; //500 requests per hour per categoryProduct/key
-        $this->methods['categoryProduct_post']['limit'] = 100; //100 requests per hour per categoryProduct/key
-        $this->methods['categoryProduct_delete']['limit'] = 50; //50 requests per hour per categoryProduct/key
-        */
-
     }
     function categoryProduct_get()
     {
         $categoryProduct = $this->categoryProduct->getAll()->result();
-        if($categoryProduct)
-        {
+        if($categoryProduct){
             $this->response($categoryProduct, 200); // 200 being the HTTP response code
         }
-        else
-        {
-            $this->response(array('error' => 'categoryProduct could not be found'), 404);
+        else{
+            $this->response(array('error' => 'categoria de producto no encontrada'), 404);
         }
     }
     function categoryProduct_post()
@@ -51,7 +41,7 @@ class categoryProductController extends REST_Controller
         $this->response($product, 200); // 200 being the HTTP response code
     }
     function categoryProduct_delete()
-    { 
+    {
         $id_categoria = $this->get('ID_CATEGORIA_ITEM');
         $this->categoryProduct->delete($id_categoria);
         $this->response(array('param'=>$id_categoria), 200);
@@ -70,10 +60,13 @@ class categoryProductController extends REST_Controller
         } catch (Exception $e) {
           // $this->response(array("error" => $e->getMessage()), 404);
         }
+        $userId = $this->get('ID_CATEGORIA_ITEM');
+        $this->categoryProduct->delete($userId);
+        $this->response(array('param'=>$userId), 200);
     }
 	public function send_post()
 	{
 		var_dump($this->request->body);
 	}
-	
+
 }

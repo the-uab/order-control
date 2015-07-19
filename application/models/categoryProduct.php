@@ -8,14 +8,15 @@ class CategoryProduct extends CI_Model {
   }
 
   // get categoryProducts with paging
-  function getAll(){
-    
+  function getAll()
+  {  
     return $this->db->get($this->tbl_categoryProduct);
   }
 
   // add new categoryProduct
   function save($categoryProduct){
     $this->db->insert($this->tbl_categoryProduct, $categoryProduct);
+    //para mostrar en el postman
     return (array)$this->get_by_id($this->db->insert_id())->row();
   }
   // update categoryProduct by id
