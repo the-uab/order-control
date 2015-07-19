@@ -3,72 +3,110 @@
   <div class="jumbotron">
     <div class="row" style="float:right;margin: 5px;">
       <div >
-        <div class="thumbnail" style="min-height: 25%">
-          
-          <div class="caption">
-            <h4 class="center">Menu</h4>
-            <a ui-sref="home.pedidos">Administrar Pedidos</a><br />
-            <a ui-sref="home.nuevoPedido">Nuevo Pedido</a><br />
-            <a ui-sref="home.pedidos">Ver Fondos</a><br />
-            <a ui-sref="home.pedidosSolicitados">Solicitud de Pedidos</a><br />
-          </div>
-        </div>
+        
       </div>
     </div>
 </style>
       <b><h3 class="center">Administración de Pedidos</h3></b>
-        <br>
-        <p>
-          Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Nam pretium turpis et arcu. Morbi mollis tellus ac sapien. Curabitur at lacus ac velit ornare lobortis. In ut quam vitae odio lacinia tincidunt.</p>
+      <hr>
         
+          <form class="form-horizontal">
+           <div class="form-group">
+            <label for="precio" class="col-sm-2 control-label">Unidad Solicitante:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="precio" placeholder="Facultad">
+            </div>
+            <hr>
+            <label for="precio" class="col-sm-2 control-label">Usuario Solicitante:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="precio" placeholder="Nombre solicitante">
+            </div>
+
+          </div>         
+
+          </form>
+          <h3>Lista de Pedidos</h3>
+          <hr><hr>
+
           <div class="table-responsive" style="max-width: 75%;">
             <table class="table table-bordered table-hover ">
               <thead>
               <tr class="active">
-                <th class="col-md-1">N°</th>
-                <th >DESCRIPCION</th>
-                <th >CANTIDAD</th>
-                <th >PRECIO TOTAL</th>
-                <th class="center">GESTIÓN</th>
+                <th class="col-md-2">Codigo</th>
+                <th >Producto</th>
+                <th >Cantidad</th>
+                <th >Descripcion</th>
+                <th >Costo Unitario</th>
+                <th >Costo Total</th>
+                <th class="center">Verificación</th>
               </tr>
               </thead>
-              <tbody>
-              <tr >
-              <td>1</td>
-              <td>Ejemplo de descripcion de pedido</td><td>120</td><td>450.20</td>
-              <td class="center" >
-              <a href=""><span class="label label-info" text="">Ver</span></a>
-              <a href=""><span class="label label-success">Editar</span></a>
-              <a href=""><span class="label label-danger">Eliminar</span></a></td></tr>
+              <body>
+                        
+              <tr>
               
-              <tr >
-              <td>2</td>
-              <td>CELDA</td><td>CELDA</td><td>CELDA</td>
-              <td class="center" >
-              <a href=""><span class="label label-info">Ver</span></a>
-              <a href=""><span class="label label-success">Editar</span></a>
-              <a href=""><span class="label label-danger">Eliminar</span></a></td></tr>
+                <td>
+                <div class="form-group">
+                    <div>
+                      <input type="text" class="form-control" ng-model="item.codigo" placeholder="codigo">
+
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <div>
+                      <input type="text" class="form-control" ng-model="item.producto" placeholder="producto">
+                    </div>
+                  </div>
+                </td>
+                <td>
+                <div class="form-group">
+                <div>
+              <input type="text" class="form-control" ng-model="item.cantidad" placeholder="cantidad">
+            </div>
+          </div>  
+                </td>
+              <td>
+                <div class="form-group">
+            <div>
+              <input type="text" class="form-control" ng-model="item.descripcion" placeholder="descripcion  ">
+            </div>
+          </div>  
+                </td>
+                <td>
+                <div class="form-group">
+            <div>
+              <input type="text" class="form-control" ng-model="item.costototal" placeholder="costototal">
+            </div>
+          </div>  
+                </td>
+                <td>
+                <div class="form-group">
+            <div>
+              <input type="text" class="form-control" ng-model="item.costounitario" placeholder="costounitario">
+            </div>
+          </div>  
+                </td>
+                <td class="center" >
               
-              <tr >
-              <td>3</td>
-              <td>CELDA</td><td>CELDA</td><td>CELDA</td>
-              <td class="center" >
-              <a href=""><span class="label label-info">Ver</span></a>
-              <a href=""><span class="label label-success">Editar</span></a>
-              <a href=""><span class="label label-danger">Eliminar</span></a></td></tr>
-              
-              <tr >
-              <td>4</td>
-              <td>CELDA</td><td>CELDA</td><td>CELDA</td>
-              <td class="center" >
-              <a href=""><span class="label label-info">Ver</span></a>
-              <a href=""><span class="label label-success">Editar</span></a>
-              <a href=""><span class="label label-danger">Eliminar</span></a></td></tr>
+                <a ng-click="guardarPedidos(item)"><span class="label label-info">guardar</span></a>
               </tr>
+
+               <tr ng-repeat="pedido in pedidos">
+                <td>{{pedido.codigo}}</td>
+                <td>{{pedido.producto}}</td>
+                <td>{{pedido.descripcion}}</td>
+                <td>{{pedido.costounitario}}</td>
+                <td>{{pedido.costototal}}</td>
+                <td>{{pedido.verificacion}}</td>
+                <td><a ng-click="eliminarPedidos(pedido)"><span class="label label-info">eliminar</span></a></td>
+                </tr>
+
+
             </tbody>
           </table>
         </div>
-
   </div>
 
 </div>

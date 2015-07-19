@@ -37,9 +37,10 @@
     <!-- update -->
 
     <script src="./public/services/persons.js"></script>
-
     <script src="./public/services/product.js"></script>
     <script src="./public/services/categoryProduct.js"></script>
+
+	</head>
 
     <script src="./public/controllers/almacen/product.js"></script>
     <script src="./public/controllers/almacen/categoryProduct.js"></script>

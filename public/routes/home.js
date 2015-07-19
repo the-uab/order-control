@@ -59,7 +59,7 @@ angular.module('seedApp')
       url: '/productos',
       templateUrl: path + '/almacen/paginas/productos.html',
       controller: 'productController'
-    }); 
+    });
 
     $stateProvider.state('almacen.nuevoproducto', {
       url: '/nuevo_producto',
@@ -79,6 +79,44 @@ angular.module('seedApp')
     $stateProvider.state('almacen.editProducto', {
       url: '/editProducto/:idProducto',
       templateUrl: path + '/almacen/productos/editProducto.html',
+      controller: 'productController'
+    });
+
+    //Tesorero -->Treasure
+    $stateProvider.state('treasure', {
+      url: '/',
+      templateUrl: path + '/treasure.html',
+      controller: 'TreasureController'
+    });
+
+    $stateProvider.state('treasure.admin_pedido',{
+      url:'admin_pedido',
+      templateUrl: path+'/admin_pedido.html',
+      controller:'TreasureController'});
+
+    $stateProvider.state('treasure.admin_presupuesto',{
+      url:'admin_presupuesto',
+      templateUrl: path+'/admin_presupuesto.html',
+      controller:'TreasureController'});
+
+    $stateProvider.state('home.pedidos', {
+      url: 'pedidos',
+      templateUrl: path + '/pedidos.html',
+      controller: 'PedidosController'
+    });
+    $stateProvider.state('home.nuevoPedido', {
+      url: 'nuevoPedido',
+      templateUrl: path + '/nuevoPedido.html',
+      controller: 'HomeController'
+    });
+    $stateProvider.state('home.pedidosSolicitados', {
+      url: 'pedidosSolicitados',
+      templateUrl: path + '/pedidosSolicitados.html',
+      controller: 'HomeController'
+    });
+    $stateProvider.state('home.producto', {
+      url: 'product',
+      templateUrl: path + '/producto.html',
       controller: 'productController'
     });
 
