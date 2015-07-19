@@ -63,6 +63,7 @@ angular.module('seedApp')
       templateUrl: path + '/pedidos.html',
       controller: 'HomeController'
     });
+
     $stateProvider.state('home.nuevoPedido', {
       url: 'nuevoPedido',
       templateUrl: path + '/nuevoPedido.html',
@@ -83,6 +84,19 @@ angular.module('seedApp')
       templateUrl: path + '/category_product.html',
       controller: 'categoryProductController'
     });
+
+  $stateProvider.state('home.vidal', {
+      url: 'vidal',
+      templateUrl: path + '/vidal.html',
+      controller: 'HomeController'
+    });
+
+   $stateProvider.state('home.vidal2', {
+      url: 'vidal2',
+      templateUrl: path + '/vidal2.html',
+      controller: 'HomeController'
+    });
+
     $urlRouterProvider.otherwise('/');
   }
 ]);
