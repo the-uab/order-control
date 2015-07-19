@@ -33,6 +33,7 @@ angular.module('seedApp')
       templateUrl: path + '/newuser.html',
       controller: 'UsersController'
     });
+
     //Tesorero -->Treasure
     $stateProvider.state('treasure', {
       url: '/',
@@ -43,7 +44,14 @@ angular.module('seedApp')
     $stateProvider.state('treasure.admin_pedido',{
       url:'admin_pedido',
       templateUrl: path+'/admin_pedido.html',
-      controller:'TreasureController'});
+      controller:'TreasureController'
+    });
+
+     $stateProvider.state('juan', {
+      url: '/juan',
+      templateUrl: path + '/juan.html',
+      controller: 'juan'
+    });
 
     $stateProvider.state('treasure.admin_presupuesto',{
       url:'admin_presupuesto',
